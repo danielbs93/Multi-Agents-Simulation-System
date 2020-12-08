@@ -286,7 +286,7 @@ public class MapBuilder : MonoBehaviour
     void Start()
     {
         canvasmune.gameObject.SetActive(false);
-        cong.gameObject.SetActive(false); //
+        cong.gameObject.SetActive(false); // asd
         // map = noeasy;
         // map = easy;
         // Given an 3D array 
