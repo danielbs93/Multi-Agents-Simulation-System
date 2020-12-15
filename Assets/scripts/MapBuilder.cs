@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MapBuilder : MonoBehaviour
 {
 
+    //Objects
     public Canvas canvas;
 
     public Canvas canvasmune;
@@ -12,224 +14,13 @@ public class MapBuilder : MonoBehaviour
     public Canvas cong;
 
     public GameObject maphold;
+
+    private MapGenerator mapGenerator = new MapGenerator();
+
+    //Fields
     public char[,,] map;
-
-
-    public char[,,] domain_sokoban = new char[3, 20, 20] {
-        {
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'}
-        },
-        {
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'g', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', 'b', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'b', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'g', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'b', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', 'h', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'g', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'}
-        },
-        {
-            {'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w','w', 'w', 'w', 'w', 'w', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'},
-            {'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w'}
-        },
-    };
-
-
-    public char[,,] domain_EMSS = new char[,,]{
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', 'w', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', ' ', 'h', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'b', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', 'b', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', 'w', 'w', 'w', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', 'w', 'w', 'w', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', 'g', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', 'b', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', 'w', 'w', 'w', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'g', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            },
-            {
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', 'w', 'w', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', 'g', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', 'w', ' '},
-                {' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' '}
-            }
-        };
+    private bool controlEnabled = false; // Face Camera option was clicked ('c' in keyboard)
+    private bool keyboardPlayer = true; // Prototype option - Agent moves currently with the 
 
     public GameObject worker;
     public GameObject wall;
@@ -247,19 +38,17 @@ public class MapBuilder : MonoBehaviour
     {
         canvasmune.gameObject.SetActive(false);
         cong.gameObject.SetActive(false); // asd
-        // map = noeasy;
-        // map = easy;
-        // Given an 3D array 
 
     }
 
     // Update is called once per frame
 
-    public void backmune(){
+    public void backmune()
+    {
         canvas.gameObject.SetActive(true);
         canvasmune.gameObject.SetActive(false);
     }
-    
+
     public void setmap(int i)
     {
         canvas.gameObject.SetActive(false);
@@ -268,14 +57,15 @@ public class MapBuilder : MonoBehaviour
         canvasmune.gameObject.SetActive(true);
         if (i == 1)
         {
-            map = domain_sokoban;
+            map = mapGenerator.GenerateMap(1);
         }
         if (i == 2)
         {
-            map = domain_EMSS;
+            map = mapGenerator.GenerateMap(2);
         }
         int countbox = 0; // # of boxes / goals
         int countwall = 0;
+        int countgoal = 0;
 
         foreach (char c in map)
         {
@@ -283,6 +73,8 @@ public class MapBuilder : MonoBehaviour
                 countbox++;
             if (c == 'w')
                 countwall++;
+            if (c == 'g')
+                countgoal++;
         }
         if (boxes != null && goals != null)
         {
@@ -290,14 +82,14 @@ public class MapBuilder : MonoBehaviour
             box.SetActive(true);
             worker.SetActive(true);
             goal.SetActive(true);
-            foreach(Transform child in maphold.transform){
+            foreach (Transform child in maphold.transform)
+            {
                 Destroy(child.gameObject);
             }
 
         }
         boxes = new GameObject[countbox];
-        goals = new GameObject[countbox];
-
+        goals = new GameObject[countgoal];
         walls = new GameObject[countwall];
 
         int flagBoxes = 0;
@@ -315,7 +107,7 @@ public class MapBuilder : MonoBehaviour
                     {
                         g = Instantiate(wall);
                         walls[flagWall] = g;
-                        
+
 
                         InitializeWall(walls[flagWall], x, y, z);
                         flagWall++;
@@ -336,10 +128,11 @@ public class MapBuilder : MonoBehaviour
                     }
                     if (map[y, x, z] == 'h')
                     {
+                        //g = Instantiate(worker);
                         InitializeWorker(worker, x, y, z);
                     }
                     if (g != null)
-                    g.transform.parent = maphold.transform;
+                        g.transform.parent = maphold.transform;
                 }
             }
         }
@@ -367,30 +160,42 @@ public class MapBuilder : MonoBehaviour
 
     void Update()
     {
-        
-        if (goals.Length != 0 && checkwin()){
+
+        if (goals.Length != 0 && checkwin())
+        {
             cong.gameObject.SetActive(true);
             canvasmune.gameObject.SetActive(true);
+            Deactivate(worker);
             maphold.SetActive(false);
             return;
         }
 
-        // rotate left/right, up/down
-        //if (Input.GetMouseButton(1))
-        //{
-        //    cameraHolder.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * cameraRotateSpeed, Space.Self);
-        //    Camera.main.transform.Rotate(Vector3.right * Input.GetAxisRaw("Mouse Y") * cameraRotateSpeed, Space.Self);
-        //}
+        if (Input.GetKeyDown(KeyCode.C))
+            controlEnabled = !controlEnabled;
 
-        // Move,  Z use camera forward project vector, X use camera right
-        //if (Input.GetMouseButton(2))
-        //{
-        //    Vector3 projectVector = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
-        //    cameraHolder.Translate(projectVector * Input.GetAxisRaw("Mouse Y") * cameraMoveSpeed, Space.World);
-        //    cameraHolder.Translate(Camera.main.transform.right * Input.GetAxisRaw("Mouse X") * cameraMoveSpeed, Space.World);
-        //}
+        if (keyboardPlayer)
+        {
+            if (!controlEnabled)
+            {
+                AgentMovements(false);
+            }
+        }
+        else
+        {
+            AgentMovements(true);
+        }
 
+    }
 
+    /**
+     * This function responsible for the ai agent moves.
+     * 
+     * Boolean 'isAgent' represent if the prototype currently is on - keyboard agent movement,
+     * or the agent moves autonomously.
+     * 
+     */
+    private void AgentMovements(bool isAgent)
+    {
         if (Input.GetKeyDown(KeyCode.W))
         {
             foreach (GameObject tbox in boxes)
@@ -448,15 +253,18 @@ public class MapBuilder : MonoBehaviour
             }
             ValidifyMove(worker, new Vector3(0, -1, 0));
         }
-
     }
 
-
-    bool checkwin(){
-         int goalflags = 0;
-        foreach(GameObject tgoal in goals)
-            foreach(GameObject tbox in boxes){
-                if(tgoal.GetComponent<Transform>().position.Equals(tbox.GetComponent<Transform>().position))
+    /*
+     * This function checks if all boxes are in their goal positions
+     */
+    bool checkwin()
+    {
+        int goalflags = 0;
+        foreach (GameObject tgoal in goals)
+            foreach (GameObject tbox in boxes)
+            {
+                if (tgoal.GetComponent<Transform>().position.Equals(tbox.GetComponent<Transform>().position))
                     goalflags++;
             }
         if (goals.Length == goalflags)
@@ -497,22 +305,54 @@ public class MapBuilder : MonoBehaviour
         o.SetActive(false);
     }
 
-    void Deactivate(GameObject[] arr){
-        foreach(GameObject o in arr)
+    void Deactivate(GameObject[] arr)
+    {
+        foreach (GameObject o in arr)
             o.SetActive(false);
     }
 
+    /*
+     * Validating Agent movements:
+     *      illegal move: through walls, through boxes where there is walls after it.
+     *      legal move: clear step ahead, box with clear step after it .
+     */
     void ValidifyMove(GameObject o, Vector3 mov)
     {
         Vector3 pos = o.GetComponent<Transform>().position + mov;
-        foreach (GameObject wall in walls)
+        if (wallInPosition(pos))
+            return;
+        if (boxInPosition(pos))
         {
-            if (wall.GetComponent<Transform>().position == pos)
+            Vector3 nextPos = pos + mov;
+            if (wallInPosition(nextPos))
                 return;
         }
-        // if ((int)pos.y < map.GetLength(0) && (int)pos.x < map.GetLength(1) && (int)pos.z < map.GetLength(2))
-        //     if(map[(int)pos.x, (int)pos.y, (int)pos.z] != 'w')
         o.GetComponent<Transform>().position += mov;
     }
 
+    /*
+     * Returns true if there is a box in the given position 
+     * */
+    private bool boxInPosition(Vector3 pos)
+    {
+        foreach (GameObject box in boxes)
+        {
+            if (box.GetComponent<Transform>().position == pos)
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Returns true if there is a wall in the given position
+     * */
+    private bool wallInPosition(Vector3 pos)
+    {
+        foreach (GameObject wall in walls)
+        {
+            if (wall.GetComponent<Transform>().position == pos)
+                return true;
+        }
+        return false;
+    }
 }

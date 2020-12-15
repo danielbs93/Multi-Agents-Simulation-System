@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 66
+  controlID: 131
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Window
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -68,14 +68,14 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 731
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 20}
+  - {fileID: 16}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -93,13 +93,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 241
-    height: 460
+    width: 242
+    height: 424
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 21}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -118,15 +118,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 460
+    y: 424
     width: 1205
-    height: 271
+    height: 307
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 19}
-  - {fileID: 24}
+  - {fileID: 15}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &6
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -217,10 +217,10 @@ MonoBehaviour:
     y: 0
     width: 1205
     height: 731
-  m_MinSize: {x: 303, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 107
+  controlID: 132
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,11 +241,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1205
-    height: 460
-  m_MinSize: {x: 303, y: 221}
+    height: 424
+  m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 108
+  controlID: 126
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,29 +256,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GitHistoryWindow
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 241
+    x: 242
     y: 0
-    width: 964
-    height: 460
-  m_MinSize: {x: 102, y: 121}
+    width: 963
+    height: 424
+  m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 22}
-  - {fileID: 23}
   - {fileID: 18}
-  - {fileID: 17}
-  - {fileID: 16}
-  - {fileID: 15}
-  - {fileID: 13}
+  - {fileID: 19}
   - {fileID: 14}
-  m_Selected: 7
-  m_LastSelected: 5
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -304,14 +300,14 @@ MonoBehaviour:
     width: 330
     height: 710
   m_ViewDataDictionary: {fileID: 0}
-  progressMessageClearTime: 2566.096297
+  progressMessageClearTime: -1
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
   currentTrackingStatusHasUpdate: 0
-  currentStatusEntriesHasUpdate: 0
-  repositoryProgressHasUpdate: 0
-  appManagerProgressHasUpdate: 0
+  currentStatusEntriesHasUpdate: 1
+  repositoryProgressHasUpdate: 1
+  appManagerProgressHasUpdate: 1
   changeTab: 3
   activeTab: 3
   initProjectView:
@@ -324,8 +320,19 @@ MonoBehaviour:
     treeLocals:
       IsRemote: 0
       folders:
-        keys: []
-        values: []
+        keys:
+        - Local branches
+        values:
+        - path: Local branches
+          label: Local branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -334,7 +341,37 @@ MonoBehaviour:
       displayRootNode: 1
       isSelectable: 1
       isCheckable: 0
-      nodes: []
+      nodes:
+      - path: Local branches
+        label: Local branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: main
+        label: main
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 1
+        treeIsCheckable: 0
+        checkState: 0
+      - path: Work1
+        label: Work1
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
       selectedNode:
         path: 
         label: 
@@ -349,8 +386,30 @@ MonoBehaviour:
     treeRemotes:
       IsRemote: 1
       folders:
-        keys: []
-        values: []
+        keys:
+        - Remote branches
+        - origin
+        values:
+        - path: Remote branches
+          label: Remote branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+        - path: origin
+          label: origin
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -359,7 +418,47 @@ MonoBehaviour:
       displayRootNode: 1
       isSelectable: 1
       isCheckable: 0
-      nodes: []
+      nodes:
+      - path: Remote branches
+        label: Remote branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin
+        label: origin
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/main
+        label: main
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/Work1
+        label: Work1
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
       selectedNode:
         path: 
         label: 
@@ -374,46 +473,50 @@ MonoBehaviour:
     mode: 0
     newBranchName: 
     scroll: {x: 0, y: 0}
-    disableDelete: 0
-    disableCreate: 0
+    disableDelete: 1
+    disableCreate: 1
     lastLocalAndRemoteBranchListChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2020-12-09T19:39:13.101+02:00
+      cacheType: 2
     lastCurrentBranchAndRemoteChange:
-      updatedTimeString: 
-      cacheType: 0
+      updatedTimeString: 2020-12-09T19:39:13.087+02:00
+      cacheType: 1
     currentBranch:
-      name: 
-      tracking: 
+      name: main
+      tracking: origin/main
     currentRemote:
-      name: 
-      url: 
+      name: origin
+      url: https://github.com/danielbs93/Multi-Agent-Simulation-System
       login: 
       user: 
       host: 
       function: 0
       token: 
-    localBranches: []
-    remoteBranches: []
+    localBranches:
+    - name: main
+      tracking: origin/main
+    - name: Work1
+      tracking: origin/Work1
+    remoteBranches:
+    - name: origin/main
+      tracking: '[None]'
+    - name: origin/Work1
+      tracking: '[None]'
   changesView:
     currentBranchHasUpdate: 0
-    currentStatusEntriesHasUpdate: 0
-    currentLocksHasUpdate: 0
-    commitBody: asdasdas
-    commitMessage: asdasdasd
+    currentStatusEntriesHasUpdate: 1
+    currentLocksHasUpdate: 1
+    commitBody: 
+    commitMessage: 
     currentBranch: '[main]'
-    treeScroll: {x: 0, y: 300}
+    treeScroll: {x: 0, y: 0}
     treeChanges:
       assets:
         keys:
         - 00000000000000001000000000000000
-        - 720712be6e31c444f88f57bb85bf5fa5
-        - 2ef819fce29681040b45466246073647
-        - 42fb921b601715548a3e8555a547ff2b
-        - f84114d54ebfe914a9f1b7604cac3fd2
-        - 1f22838dfc063fa4f94362edf3ce1b7a
-        - 2f9df7d35e54dd7438792c31f896b21e
-        - 6164890815804fb4f83e572f6fdc02ff
+        - c901e7ba141c3804f8925b4947139482
+        - 9545c2ee03d974c4285b04bd2d2408d1
+        - abaefaba6cdca024abc336fb3dcce2f3
         - 3a8b514fd8668b843a868e83e44fe6c7
         values:
         - path: Assets
@@ -425,7 +528,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -434,8 +537,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Plugins
-          label: Plugins
+        - path: Assets\scripts
+          label: scripts
           level: 1
           isFolder: 1
           isContainer: 0
@@ -443,7 +546,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -452,114 +555,42 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Plugins\UniGit
-          label: UniGit
+        - path: Assets\scripts\MapBuilder.cs
+          label: MapBuilder.cs
           level: 2
-          isFolder: 1
+          isFolder: 0
           isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
+            path: Assets\scripts\MapBuilder.cs
+            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+            projectPath: Assets\scripts\MapBuilder.cs
             originalPath: 
             indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets\Plugins\UniGit\Editor
-          label: Editor
-          level: 3
-          isFolder: 1
+            workTreeStatus: 3
+        - path: Assets\scripts\MapGenerator.cs
+          label: MapGenerator.cs
+          level: 2
+          isFolder: 0
           isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
+            path: Assets\scripts\MapGenerator.cs
+            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+            projectPath: Assets\scripts\MapGenerator.cs
             originalPath: 
             indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets\Plugins\UniGit\Editor\UniGit.dll
-          label: UniGit.dll
-          level: 4
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Plugins\UniGit\Editor\UniGit.dll
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGit.dll
-            projectPath: Assets\Plugins\UniGit\Editor\UniGit.dll
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
-        - path: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-          label: UniGitResources.dll
-          level: 4
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGitResources.dll
-            projectPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
-        - path: Assets\Plugins\UniGit\Guide.pdf
-          label: Guide.pdf
-          level: 3
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Plugins\UniGit\Guide.pdf
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Guide.pdf
-            projectPath: Assets\Plugins\UniGit\Guide.pdf
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
-        - path: Assets\Plugins\UniGit\Readme.pdf
-          label: Readme.pdf
-          level: 3
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Plugins\UniGit\Readme.pdf
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Readme.pdf
-            projectPath: Assets\Plugins\UniGit\Readme.pdf
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            workTreeStatus: 3
         - path: Assets\sokoban.unity
           label: sokoban.unity
           level: 1
@@ -569,25 +600,24 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: Assets\sokoban.unity
             fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
             projectPath: Assets\sokoban.unity
             originalPath: 
-            indexStatus: 3
-            workTreeStatus: 0
+            indexStatus: 0
+            workTreeStatus: 3
       folders:
         keys:
         - Assets
-        - Assets\Plugins
-        - Assets\Plugins\UniGit
-        - Assets\Plugins\UniGit\Editor
+        - Assets\scripts
         - Library
-        - Library\APIUpdater
         - Library\ScriptAssemblies
-        - Library\ShaderCache
+        - Library\StateCache
+        - Library\StateCache\Hierarchy
+        - Library\StateCache\SceneView
         values:
         - path: Assets
           label: Assets
@@ -598,7 +628,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -607,8 +637,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Plugins
-          label: Plugins
+        - path: Assets\scripts
+          label: scripts
           level: 1
           isFolder: 1
           isContainer: 0
@@ -616,43 +646,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets\Plugins\UniGit
-          label: UniGit
-          level: 2
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets\Plugins\UniGit\Editor
-          label: Editor
-          level: 3
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -670,25 +664,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: Library\APIUpdater
-          label: APIUpdater
-          level: 1
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -706,7 +682,7 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -715,8 +691,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Library\ShaderCache
-          label: ShaderCache
+        - path: Library\StateCache
+          label: StateCache
           level: 1
           isFolder: 1
           isContainer: 0
@@ -724,7 +700,43 @@ MonoBehaviour:
           isHidden: 0
           isActive: 0
           treeIsCheckable: 1
-          checkState: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy
+          label: Hierarchy
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\StateCache\SceneView
+          label: SceneView
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
           isLocked: 0
           gitStatusEntry:
             path: 
@@ -770,7 +782,7 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: 
@@ -779,8 +791,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Plugins
-        label: Plugins
+      - path: Assets\scripts
+        label: scripts
         level: 1
         isFolder: 1
         isContainer: 0
@@ -788,7 +800,7 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: 
@@ -797,8 +809,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Plugins\UniGit.meta
-        label: UniGit.meta
+      - path: Assets\scripts\MapBuilder.cs
+        label: MapBuilder.cs
         level: 2
         isFolder: 0
         isContainer: 0
@@ -806,213 +818,33 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Plugins\UniGit.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit.meta
-          projectPath: Assets\Plugins\UniGit.meta
+          path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit
-        label: UniGit
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\scripts\MapGenerator.cs
+        label: MapGenerator.cs
         level: 2
-        isFolder: 1
+        isFolder: 0
         isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
+          path: Assets\scripts\MapGenerator.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+          projectPath: Assets\scripts\MapGenerator.cs
           originalPath: 
           indexStatus: 0
-          workTreeStatus: 0
-      - path: Assets\Plugins\UniGit\Editor.meta
-        label: Editor.meta
-        level: 3
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Editor.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor.meta
-          projectPath: Assets\Plugins\UniGit\Editor.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Editor
-        label: Editor
-        level: 3
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Assets\Plugins\UniGit\Editor\UniGit.dll
-        label: UniGit.dll
-        level: 4
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Editor\UniGit.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGit.dll
-          projectPath: Assets\Plugins\UniGit\Editor\UniGit.dll
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-        label: UniGit.dll.meta
-        level: 5
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-          projectPath: Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-        label: UniGitResources.dll
-        level: 4
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGitResources.dll
-          projectPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-        label: UniGitResources.dll.meta
-        level: 5
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-          projectPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Guide.pdf
-        label: Guide.pdf
-        level: 3
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Guide.pdf
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Guide.pdf
-          projectPath: Assets\Plugins\UniGit\Guide.pdf
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Guide.pdf.meta
-        label: Guide.pdf.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Guide.pdf.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Guide.pdf.meta
-          projectPath: Assets\Plugins\UniGit\Guide.pdf.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Readme.pdf
-        label: Readme.pdf
-        level: 3
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Readme.pdf
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Readme.pdf
-          projectPath: Assets\Plugins\UniGit\Readme.pdf
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Plugins\UniGit\Readme.pdf.meta
-        label: Readme.pdf.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Plugins\UniGit\Readme.pdf.meta
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Readme.pdf.meta
-          projectPath: Assets\Plugins\UniGit\Readme.pdf.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          workTreeStatus: 3
       - path: Assets\sokoban.unity
         label: sokoban.unity
         level: 1
@@ -1022,15 +854,15 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: Assets\sokoban.unity
           fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
           projectPath: Assets\sokoban.unity
           originalPath: 
-          indexStatus: 3
-          workTreeStatus: 0
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Library
         label: Library
         level: 0
@@ -1040,7 +872,7 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: 
@@ -1049,42 +881,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Library\APIUpdater
-        label: APIUpdater
-        level: 1
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Library\APIUpdater\project-dependencies.graph
-        label: project-dependencies.graph
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\APIUpdater\project-dependencies.graph
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\APIUpdater\project-dependencies.graph
-          projectPath: Library\APIUpdater\project-dependencies.graph
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
       - path: Library\ArtifactDB
         label: ArtifactDB
         level: 1
@@ -1094,30 +890,12 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: Library\ArtifactDB
           fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
           projectPath: Library\ArtifactDB
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\CurrentLayout-default.dwlt
-        label: CurrentLayout-default.dwlt
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\CurrentLayout-default.dwlt
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
-          projectPath: Library\CurrentLayout-default.dwlt
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -1130,7 +908,7 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: 
@@ -1148,7 +926,7 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: Library\ScriptAssemblies\Assembly-CSharp.dll
@@ -1157,8 +935,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-        label: Unity.CollabProxy.Editor.dll
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        label: Assembly-CSharp.pdb
         level: 2
         isFolder: 0
         isContainer: 0
@@ -1166,246 +944,12 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-          projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-        label: Unity.Rider.Editor.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-          projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-        label: Unity.TextMeshPro.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-          projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-        label: Unity.TextMeshPro.Editor.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-          projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.Timeline.dll
-        label: Unity.Timeline.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.Timeline.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.dll
-          projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-        label: Unity.Timeline.Editor.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-          projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-        label: Unity.VSCode.Editor.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-          projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-        label: UnityEditor.TestRunner.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-          projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\UnityEditor.UI.dll
-        label: UnityEditor.UI.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\UnityEditor.UI.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.UI.dll
-          projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-        label: UnityEngine.TestRunner.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-          projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ScriptAssemblies\UnityEngine.UI.dll
-        label: UnityEngine.UI.dll
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ScriptAssemblies\UnityEngine.UI.dll
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.UI.dll
-          projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\ShaderCache
-        label: ShaderCache
-        level: 1
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: Library\ShaderCache\EditorEncounteredVariants
-        label: EditorEncounteredVariants
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\ShaderCache\EditorEncounteredVariants
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
-          projectPath: Library\ShaderCache\EditorEncounteredVariants
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-        label: shadercompiler-UnityShaderCompiler.exe0.log
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 1
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
-          projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -1418,12 +962,102 @@ MonoBehaviour:
         isHidden: 0
         isActive: 0
         treeIsCheckable: 1
-        checkState: 1
+        checkState: 0
         isLocked: 0
         gitStatusEntry:
           path: Library\SourceAssetDB
           fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
           projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Library\StateCache
+        label: StateCache
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy
+        label: Hierarchy
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        label: 2c3dc4-mainStage.json
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Library\StateCache\SceneView
+        label: SceneView
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        label: e6d17b-mainStage.json
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -1447,75 +1081,21 @@ MonoBehaviour:
           indexStatus: 0
           workTreeStatus: 0
     gitStatusEntries:
-    - path: Assets\Plugins\UniGit.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit.meta
-      projectPath: Assets\Plugins\UniGit.meta
+    - path: Assets\scripts\MapBuilder.cs
+      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+      projectPath: Assets\scripts\MapBuilder.cs
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Editor.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor.meta
-      projectPath: Assets\Plugins\UniGit\Editor.meta
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\scripts\MapGenerator.cs
+      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+      projectPath: Assets\scripts\MapGenerator.cs
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Editor\UniGit.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGit.dll
-      projectPath: Assets\Plugins\UniGit\Editor\UniGit.dll
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-      projectPath: Assets\Plugins\UniGit\Editor\UniGit.dll.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGitResources.dll
-      projectPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-      projectPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Guide.pdf
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Guide.pdf
-      projectPath: Assets\Plugins\UniGit\Guide.pdf
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Guide.pdf.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Guide.pdf.meta
-      projectPath: Assets\Plugins\UniGit\Guide.pdf.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Readme.pdf
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Readme.pdf
-      projectPath: Assets\Plugins\UniGit\Readme.pdf
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Plugins\UniGit\Readme.pdf.meta
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\UniGit\Readme.pdf.meta
-      projectPath: Assets\Plugins\UniGit\Readme.pdf.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
+      indexStatus: 0
+      workTreeStatus: 3
     - path: Assets\sokoban.unity
       fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
       projectPath: Assets\sokoban.unity
-      originalPath: 
-      indexStatus: 3
-      workTreeStatus: 0
-    - path: Library\APIUpdater\project-dependencies.graph
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\APIUpdater\project-dependencies.graph
-      projectPath: Library\APIUpdater\project-dependencies.graph
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
@@ -1525,93 +1105,15 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: Library\CurrentLayout-default.dwlt
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
-      projectPath: Library\CurrentLayout-default.dwlt
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
     - path: Library\ScriptAssemblies\Assembly-CSharp.dll
       fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
       projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-      projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-      projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-      projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-      projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.Timeline.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.dll
-      projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-      projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-      projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-      projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\UnityEditor.UI.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.UI.dll
-      projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-      projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ScriptAssemblies\UnityEngine.UI.dll
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.UI.dll
-      projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\ShaderCache\EditorEncounteredVariants
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
-      projectPath: Library\ShaderCache\EditorEncounteredVariants
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
-      projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+    - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+      projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
@@ -1621,20 +1123,74 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    changedFilesText: 29 changed files
+    - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+      projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+      projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    changedFilesText: 9 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2020-12-08T19:43:09.022+02:00
+      updatedTimeString: 2020-12-15T16:35:11.374+02:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2020-12-15T20:09:42.079+02:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2020-12-08T19:45:51.864+02:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
     currentTrackingStatusHasUpdate: 0
     logEntries:
+    - commitID: 9ca05d285e7e9861089f06932ee3b846ccd56074
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: commit dbs
+      description: 
+      timeString: 2020-12-15T10:51:51.000+02:00
+      commitTimeString: 2020-12-15T10:51:51.000+02:00
+      changes:
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\sokoban.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+        projectPath: Assets\sokoban.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: de0d6a1eb57eede10d1be99c58ab5d0bf6e11bbf
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: asdasdasd
+      description: asdasdas
+      timeString: 2020-12-09T19:38:18.000+02:00
+      commitTimeString: 2020-12-09T19:38:18.000+02:00
+      changes:
+      - path: Assets\sokoban.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+        projectPath: Assets\sokoban.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     - commitID: aa63665e3039f6a8046a8f7539f83d029680b29f
       mergeA: 
       mergeB: 
@@ -28158,16 +27714,58 @@ MonoBehaviour:
         originalPath: 
         indexStatus: 4
         workTreeStatus: 0
-    statusAhead: 2
+    statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 2020-12-08T19:45:44.977+02:00
+      updatedTimeString: 2020-12-15T10:52:24.260+02:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2020-12-15T10:52:22.872+02:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
+      - commitID: 9ca05d285e7e9861089f06932ee3b846ccd56074
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: commit dbs
+        description: 
+        timeString: 2020-12-15T10:51:51.000+02:00
+        commitTimeString: 2020-12-15T10:51:51.000+02:00
+        changes:
+        - path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\sokoban.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+          projectPath: Assets\sokoban.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: de0d6a1eb57eede10d1be99c58ab5d0bf6e11bbf
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: asdasdasd
+        description: asdasdas
+        timeString: 2020-12-09T19:38:18.000+02:00
+        commitTimeString: 2020-12-09T19:38:18.000+02:00
+        changes:
+        - path: Assets\sokoban.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+          projectPath: Assets\sokoban.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       - commitID: aa63665e3039f6a8046a8f7539f83d029680b29f
         mergeA: 
         mergeB: 
@@ -54702,7 +54300,7 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 4
           workTreeStatus: 0
-      statusAhead: 2
+      statusAhead: 0
       selectedIndex: -1
     selectedEntry:
       commitID: 
@@ -54756,32 +54354,32 @@ MonoBehaviour:
     detailsScroll: {x: 0, y: 0}
   settingsView:
     gitPathView:
-      gitPath: 
-      gitLfsPath: 
+      gitPath: C:\Users\USER\AppData\Local\GitHubUnity\git\cmd\git.exe
+      gitLfsPath: C:\Users\USER\AppData\Local\GitHubUnity\git-lfs\git-lfs.exe
       errorMessage: 
       resetToBundled: 0
       resetToSystem: 0
       changingManually: 0
-    hasRemote: 0
+    hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 
-      cacheType: 0
-    metricsEnabled: 0
-    newRepositoryRemoteUrl: 
-    repositoryRemoteName: 
-    repositoryRemoteUrl: 
+      updatedTimeString: 2020-12-15T10:51:25.876+02:00
+      cacheType: 1
+    metricsEnabled: 1
+    newRepositoryRemoteUrl: https://github.com/danielbs93/Multi-Agent-Simulation-System
+    repositoryRemoteName: origin
+    repositoryRemoteUrl: https://github.com/danielbs93/Multi-Agent-Simulation-System
     scroll: {x: 0, y: 0}
     userSettingsView:
-      gitName: 
-      gitEmail: 
-      newGitName: 
-      newGitEmail: 
+      gitName: danielbs93
+      gitEmail: danielbs093@gmail.com
+      newGitName: danielbs93
+      newGitEmail: danielbs093@gmail.com
       needsSaving: 0
       lastCheckUserChangedEvent:
-        updatedTimeString: 
-        cacheType: 0
-    webTimeout: 0
-    gitTimeout: 0
+        updatedTimeString: 2020-12-15T10:47:17.318+02:00
+        cacheType: 8
+    webTimeout: 3000
+    gitTimeout: 5000
   locksView:
     currentRemoteHasUpdate: 0
     currentStatusEntriesHasUpdate: 0
@@ -54830,8 +54428,8 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: main
   currentRemoteUrl: https://github.com/danielbs93/Multi-Agent-Simulation-System
-  statusAhead: 2
-  statusBehind: 1
+  statusAhead: 0
+  statusBehind: 0
   hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
   currentBranchContent:
@@ -54843,13 +54441,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2020-12-08T19:43:09.022+02:00
+    updatedTimeString: 2020-12-15T15:26:43.587+02:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 0001-01-01T00:00:00.000+00:00
+    updatedTimeString: 2020-12-15T16:24:58.868+02:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 0001-01-01T00:00:00.000+00:00
+    updatedTimeString: 2020-12-15T19:00:02.636+02:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -54868,399 +54466,12 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: 
   repositoryProgressValue: 0
-  repositoryProgressMessage: Pushing
-  appManagerProgressValue: 0
-  appManagerProgressMessage: 
+  repositoryProgressMessage: 
+  appManagerProgressValue: 1
+  appManagerProgressMessage: Initialized
   connections: []
   primaryConnectionUsername: danielbs93
 --- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1314642953, guid: f84114d54ebfe914a9f1b7604cac3fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Git Settings
-    m_Image: {fileID: -4221040498047746133, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
-  m_ViewDataDictionary: {fileID: 0}
-  tab: 5
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 666747540, guid: f84114d54ebfe914a9f1b7604cac3fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Git History
-    m_Image: {fileID: -4221040498047746133, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
-  m_ViewDataDictionary: {fileID: 0}
-  serializedProfilePictures:
-  - texture: {fileID: 0}
-    email: danielbs093@gmail.com
-  - texture: {fileID: 0}
-    email: 49152654+EranToutian@users.noreply.github.com
-  historyScroll: {x: 0, y: 0}
-  selectedBranchName: refs/heads/main
-  maxCommitsCount: 16
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1467679456, guid: f84114d54ebfe914a9f1b7604cac3fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: GitLog
-    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
-  m_ViewDataDictionary: {fileID: 0}
-  scroll: {x: 0, y: 0}
-  infoScroll: {x: 0, y: 705}
-  showWarnings: 1
-  showLog: 1
-  showError: 1
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1203200736, guid: f84114d54ebfe914a9f1b7604cac3fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Git Diff
-    m_Image: {fileID: -4221040498047746133, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
-  m_ViewDataDictionary: {fileID: 0}
-  diffScroll: {x: 0, y: 0}
-  commitMaximized: 1
-  filter: 
-  commitScroll: {x: 0, y: 0}
-  selections: []
-  settings:
-    showFileStatusTypeFilter: -1
-    MinimizedFileStatus: -1
-    sortType: 2
-    sortDir: 0
-    emptyCommit: 0
-    amendCommit: 0
-    prettify: 0
-    merge: 1
-    unstagedChangesPriority: 1
-    commitMessage: 
-    commitMessageFromFile: 
-  diffWindowStatusList:
-    entries:
-    - localPath: Assets\Plugins\UniGit
-      name: UniGit
-      metaChange: 2
-      state: 128
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor
-      name: Editor
-      metaChange: 2
-      state: 128
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor\UniGit.dll
-      name: UniGit.dll
-      metaChange: 3
-      state: 128
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll
-      name: UniGitResources.dll
-      metaChange: 3
-      state: 128
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Guide.pdf
-      name: Guide.pdf
-      metaChange: 3
-      state: 128
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Readme.pdf
-      name: Readme.pdf
-      metaChange: 3
-      state: 128
-      flags: 0
-    - localPath: Assets\sokoban.unity
-      name: sokoban.unity
-      metaChange: 1
-      state: 2
-      flags: 0
-    - localPath: Library\APIUpdater\project-dependencies.graph
-      name: project-dependencies.graph
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ArtifactDB
-      name: ArtifactDB
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\CurrentLayout-default.dwlt
-      name: CurrentLayout-default.dwlt
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Assembly-CSharp.dll
-      name: Assembly-CSharp.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-      name: Unity.CollabProxy.Editor.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-      name: Unity.Rider.Editor.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-      name: Unity.TextMeshPro.Editor.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-      name: Unity.TextMeshPro.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-      name: Unity.Timeline.Editor.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.Timeline.dll
-      name: Unity.Timeline.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-      name: Unity.VSCode.Editor.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-      name: UnityEditor.TestRunner.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\UnityEditor.UI.dll
-      name: UnityEditor.UI.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-      name: UnityEngine.TestRunner.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ScriptAssemblies\UnityEngine.UI.dll
-      name: UnityEngine.UI.dll
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\ShaderCache\EditorEncounteredVariants
-      name: EditorEncounteredVariants
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\SourceAssetDB
-      name: SourceAssetDB
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
-      name: shadercompiler-UnityShaderCompiler.exe0.log
-      metaChange: 1
-      state: 256
-      flags: 0
-    - localPath: .vs\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: Assembly-CSharp-Editor-firstpass.csproj
-      name: Assembly-CSharp-Editor-firstpass.csproj
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.mdb
-      name: GitHub.Api.45.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.pdb
-      name: GitHub.Api.45.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
-      name: GitHub.Api.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Api.pdb
-      name: GitHub.Api.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
-      name: GitHub.Logging.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.pdb
-      name: GitHub.Logging.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.mdb
-      name: GitHub.Unity.45.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.pdb
-      name: GitHub.Unity.45.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
-      name: GitHub.Unity.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.pdb
-      name: GitHub.Unity.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.mdb
-      name: GitHub.UnityShim.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.pdb
-      name: GitHub.UnityShim.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.mdb
-      name: LibGit2SharpUnity.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor\UniGit.dll.mdb
-      name: UniGit.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor\UniGitResources.dll.mdb
-      name: UniGitResources.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\UniGit\Editor\UniGitResources.pdb
-      name: UniGitResources.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.mdb
-      name: CredentialManagement.dll.mdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.pdb
-      name: CredentialManagement.pdb
-      metaChange: 3
-      state: 16384
-      flags: 0
-    - localPath: Library\Artifacts\f3\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: Library\TempArtifacts\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: Library\gfu\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: Temp\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
-    - localPath: obj\Debug\TempPE\
-      name: 
-      metaChange: 1
-      state: 16384
-      flags: 0
---- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55276,28 +54487,28 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
+    x: 1738
+    y: 73
+    width: 800
+    height: 295
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 1107051720648161460, guid: 75182f332134ad444bf527730d27808e, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1
+    - e00: 0.75858253
       e01: 0
       e02: 0
-      e03: 0
+      e03: 76.28192
       e10: 0
-      e11: 1
+      e11: 0.75858253
       e12: 0
-      e13: 0
+      e13: 33.716087
       e20: 0
       e21: 0
       e22: 1
@@ -55324,7 +54535,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &18
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55340,17 +54551,17 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -4391848389275900105, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 240.8
-    y: 73.6
-    width: 962
-    height: 439
+    x: 1738
+    y: 73
+    width: 800
+    height: 295
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &19
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55366,15 +54577,15 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 533.60004
+    y: 497.6
     width: 1204
-    height: 250
+    height: 286
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -55389,20 +54600,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefab
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets
+  - Assets/Prefab
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 58}
-    m_SelectedIDs: c2350000
-    m_LastClickedID: 13762
-    m_ExpandedIDs: 00000000c2350000c4350000f235000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: f2350000
+    m_LastClickedID: 13810
+    m_ExpandedIDs: 00000000d2350000f6350000f2370000fe37000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -55430,7 +54641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2350000c4350000
+    m_ExpandedIDs: 00000000d2350000d4350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -55486,7 +54697,7 @@ MonoBehaviour:
     m_GridSize: 53
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 166
---- !u!114 &20
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55502,7 +54713,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -55524,7 +54735,7 @@ MonoBehaviour:
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
---- !u!114 &21
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55540,22 +54751,22 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -9000905672528348964, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 240
-    height: 439
+    width: 241
+    height: 403
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: c8f8ffff20fbffffc0360000
+      m_SelectedIDs: 2e790000
+      m_LastClickedID: 31022
+      m_ExpandedIDs: 2401f9ff1c61f9ff8ee2fbffb8e2fbff3828fcffae28fcff20befcff20fbffffc8340000ec340000fe340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -55579,7 +54790,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 2c3dc4bde4f1f5246aad3768cec87ff3
---- !u!114 &22
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55595,15 +54806,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 240.8
+    x: 242.40001
     y: 73.6
-    width: 962
-    height: 439
+    width: 961
+    height: 403
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: e6d17b3f441fdfc47bd7e69fb5f3f9d6
@@ -55615,9 +54826,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 245.9947, y: 14.913574, z: 527.9897}
+    m_Target: {x: -4.0996094, y: -273.5589, z: 9315.587}
     speed: 2
-    m_Value: {x: 245.9947, y: 14.913574, z: 527.9897}
+    m_Value: {x: -4.0996094, y: -273.5589, z: 9315.587}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -55663,20 +54874,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.14045398, y: 0.07329162, z: -0.010426365, w: -0.9873187}
+    m_Target: {x: -0.025801145, y: 0.021588556, z: -0.0005636508, w: -0.99944913}
     speed: 2
-    m_Value: {x: -0.140454, y: 0.07329162, z: -0.010426366, w: -0.98731875}
+    m_Value: {x: -0.025800752, y: 0.021588227, z: -0.0005636422, w: -0.9994339}
   m_Size:
-    m_Target: 622.2256
+    m_Target: 4886.731
     speed: 2
-    m_Value: 622.2256
+    m_Value: 4886.731
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.49999997
+    m_Speed: 0.8
+    m_SpeedNormalized: 0.40999997
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -55694,7 +54905,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &23
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55710,15 +54921,15 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1737
-    y: 73
-    width: 801
-    height: 295
+    x: 242.40001
+    y: 73.6
+    width: 961
+    height: 403
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -55728,7 +54939,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 801, y: 274}
+  m_TargetSize: {x: 961, y: 382}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -55743,10 +54954,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -400.5
-    m_HBaseRangeMax: 400.5
-    m_VBaseRangeMin: -147.5
-    m_VBaseRangeMax: 147.5
+    m_HBaseRangeMin: -384.4
+    m_HBaseRangeMax: 384.4
+    m_VBaseRangeMin: -152.8
+    m_VBaseRangeMax: 152.8
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -55763,30 +54974,30 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
-      width: 801
-      height: 295
+      y: 21
+      width: 961
+      height: 382
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 400.5, y: 147.5}
+    m_Translation: {x: 480.5, y: 191}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -400.5
-      y: -147.5
-      width: 801
-      height: 295
+      x: -480.5
+      y: -191
+      width: 961
+      height: 382
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 801, y: 295}
+  m_LastWindowPixelSize: {x: 1201.25, y: 503.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &24
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55802,13 +55013,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 533.60004
-    width: 1204
+    x: 1536
+    y: 389
+    width: 1003
     height: 250
   m_ViewDataDictionary: {fileID: 0}
