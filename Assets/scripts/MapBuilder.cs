@@ -11,49 +11,9 @@ public class MapBuilder : MonoBehaviour
 
     public Canvas cong;
 
-
     public GameObject maphold;
     public char[,,] map;
 
-
-    // h > worker, w > wall, g > goal,  b > box, ' ' > blank
-    //public char[,,] easy = new char[5, 5, 5] {
-    //    {
-    //        {' ', ' ', ' ', ' ', ' '},
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {' ', 'w', 'w', 'w', 'w'}
-    //    },
-    //    {
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', 'h', ' ', ' ', ' '}
-    //    },
-    //    {
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', 'b', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '}
-    //    },
-    //    {
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '}
-    //    },
-    //    {
-    //        {' ', 'w', 'w', 'w', 'w'},
-    //        {'w', ' ', ' ', ' ', 'g'},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '},
-    //        {'w', ' ', ' ', ' ', ' '}
-    //    },
-    //};
 
     public char[,,] domain_sokoban = new char[3, 20, 20] {
         {
@@ -333,15 +293,7 @@ public class MapBuilder : MonoBehaviour
             foreach(Transform child in maphold.transform){
                 Destroy(child.gameObject);
             }
-            // Deactivate(boxes);
-            // Deactivate(goals);
-            // Deactivate(walls);
-            // foreach (GameObject o in boxes)
-            //     o.SetActive(false);
-            // foreach (GameObject o in goals)
-            //     o.SetActive(false);
-            // foreach (GameObject o in walls)
-            //     o.SetActive(false);
+
         }
         boxes = new GameObject[countbox];
         goals = new GameObject[countbox];
@@ -384,9 +336,6 @@ public class MapBuilder : MonoBehaviour
                     }
                     if (map[y, x, z] == 'h')
                     {
-                        // print("worker");
-                        // worker = new GameObject("worker");
-                        // worker.AddComponent<Renderer>();
                         InitializeWorker(worker, x, y, z);
                     }
                     if (g != null)
@@ -396,7 +345,7 @@ public class MapBuilder : MonoBehaviour
         }
         Deactivate(box);
         Deactivate(wall);
-        // Deactivate(worker);
+        //Deactivate(worker);
         Deactivate(goal);
 
 
@@ -425,6 +374,21 @@ public class MapBuilder : MonoBehaviour
             maphold.SetActive(false);
             return;
         }
+
+        // rotate left/right, up/down
+        //if (Input.GetMouseButton(1))
+        //{
+        //    cameraHolder.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * cameraRotateSpeed, Space.Self);
+        //    Camera.main.transform.Rotate(Vector3.right * Input.GetAxisRaw("Mouse Y") * cameraRotateSpeed, Space.Self);
+        //}
+
+        // Move,  Z use camera forward project vector, X use camera right
+        //if (Input.GetMouseButton(2))
+        //{
+        //    Vector3 projectVector = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
+        //    cameraHolder.Translate(projectVector * Input.GetAxisRaw("Mouse Y") * cameraMoveSpeed, Space.World);
+        //    cameraHolder.Translate(Camera.main.transform.right * Input.GetAxisRaw("Mouse X") * cameraMoveSpeed, Space.World);
+        //}
 
 
         if (Input.GetKeyDown(KeyCode.W))
