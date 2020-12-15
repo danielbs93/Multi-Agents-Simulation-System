@@ -299,11 +299,12 @@ public class MapBuilder : MonoBehaviour
         canvas.gameObject.SetActive(true);
         canvasmune.gameObject.SetActive(false);
     }
-
+    
     public void setmap(int i)
     {
         canvas.gameObject.SetActive(false);
         cong.gameObject.SetActive(false);
+        maphold.SetActive(true);
         canvasmune.gameObject.SetActive(true);
         if (i == 1)
         {
@@ -421,6 +422,7 @@ public class MapBuilder : MonoBehaviour
         if (goals.Length != 0 && checkwin()){
             cong.gameObject.SetActive(true);
             canvasmune.gameObject.SetActive(true);
+            maphold.SetActive(false);
             return;
         }
 
