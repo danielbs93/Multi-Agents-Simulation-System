@@ -47,6 +47,7 @@ public class MapBuilder : MonoBehaviour
     {
         canvas.gameObject.SetActive(true);
         canvasmune.gameObject.SetActive(false);
+        //cong.gameObject.SetActive(false);
     }
 
     public void setmap(int i)
@@ -261,10 +262,11 @@ public class MapBuilder : MonoBehaviour
     bool checkwin()
     {
         int goalflags = 0;
+        float y_goal_box = 0.5f;
         foreach (GameObject tgoal in goals)
             foreach (GameObject tbox in boxes)
             {
-                if (tgoal.GetComponent<Transform>().position.Equals(tbox.GetComponent<Transform>().position))
+                if ((tgoal.GetComponent<Transform>().position + new Vector3(0, y_goal_box, 0)).Equals(tbox.GetComponent<Transform>().position))
                     goalflags++;
             }
         if (goals.Length == goalflags)
