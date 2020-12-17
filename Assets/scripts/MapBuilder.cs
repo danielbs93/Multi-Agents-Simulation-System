@@ -171,7 +171,7 @@ public class MapBuilder : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.F))
             controlEnabled = !controlEnabled;
 
         if (keyboardPlayer)
@@ -266,6 +266,7 @@ public class MapBuilder : MonoBehaviour
         foreach (GameObject tgoal in goals)
             foreach (GameObject tbox in boxes)
             {
+                // Since the goal is ObjectGame at position (0,0.5,0) we check the addition of goal position to the box position
                 if ((tgoal.GetComponent<Transform>().position + new Vector3(0, y_goal_box, 0)).Equals(tbox.GetComponent<Transform>().position))
                     goalflags++;
             }
@@ -326,7 +327,7 @@ public class MapBuilder : MonoBehaviour
         if (boxInPosition(pos))
         {
             Vector3 nextPos = pos + mov;
-            if (wallInPosition(nextPos))
+            if (wallInPosition(nextPos) || boxInPosition(nextPos))
                 return;
         }
         o.GetComponent<Transform>().position += mov;

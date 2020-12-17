@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 131
+  controlID: 63
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 731
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -93,8 +93,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 242
-    height: 424
+    width: 272
+    height: 393
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 424
+    y: 393
     width: 1205
-    height: 307
+    height: 338
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 15}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 132
+  controlID: 113
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -241,11 +241,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1205
-    height: 424
+    height: 393
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 126
+  controlID: 114
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 242
+    x: 272
     y: 0
-    width: 963
-    height: 424
+    width: 933
+    height: 393
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
@@ -305,7 +305,7 @@ MonoBehaviour:
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
   currentTrackingStatusHasUpdate: 0
-  currentStatusEntriesHasUpdate: 1
+  currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 1
   appManagerProgressHasUpdate: 1
   changeTab: 3
@@ -503,7 +503,7 @@ MonoBehaviour:
     - name: origin/Work1
       tracking: '[None]'
   changesView:
-    currentBranchHasUpdate: 0
+    currentBranchHasUpdate: 1
     currentStatusEntriesHasUpdate: 1
     currentLocksHasUpdate: 1
     commitBody: 
@@ -516,8 +516,6 @@ MonoBehaviour:
         - 00000000000000001000000000000000
         - c901e7ba141c3804f8925b4947139482
         - 9545c2ee03d974c4285b04bd2d2408d1
-        - abaefaba6cdca024abc336fb3dcce2f3
-        - 3a8b514fd8668b843a868e83e44fe6c7
         values:
         - path: Assets
           label: Assets
@@ -570,42 +568,6 @@ MonoBehaviour:
             path: Assets\scripts\MapBuilder.cs
             fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
             projectPath: Assets\scripts\MapBuilder.cs
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 3
-        - path: Assets\scripts\MapGenerator.cs
-          label: MapGenerator.cs
-          level: 2
-          isFolder: 0
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\scripts\MapGenerator.cs
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
-            projectPath: Assets\scripts\MapGenerator.cs
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 3
-        - path: Assets\sokoban.unity
-          label: sokoban.unity
-          level: 1
-          isFolder: 0
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\sokoban.unity
-            fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
-            projectPath: Assets\sokoban.unity
             originalPath: 
             indexStatus: 0
             workTreeStatus: 3
@@ -824,42 +786,6 @@ MonoBehaviour:
           path: Assets\scripts\MapBuilder.cs
           fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
           projectPath: Assets\scripts\MapBuilder.cs
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Assets\scripts\MapGenerator.cs
-        label: MapGenerator.cs
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\scripts\MapGenerator.cs
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
-          projectPath: Assets\scripts\MapGenerator.cs
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: Assets\sokoban.unity
-        label: sokoban.unity
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\sokoban.unity
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
-          projectPath: Assets\sokoban.unity
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -1087,18 +1013,6 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: Assets\scripts\MapGenerator.cs
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
-      projectPath: Assets\scripts\MapGenerator.cs
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    - path: Assets\sokoban.unity
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
-      projectPath: Assets\sokoban.unity
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
     - path: Library\ArtifactDB
       fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
       projectPath: Library\ArtifactDB
@@ -1135,12 +1049,12 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    changedFilesText: 9 changed files
+    changedFilesText: 7 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2020-12-15T16:35:11.374+02:00
+      updatedTimeString: 2020-12-17T10:54:26.525+02:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2020-12-15T20:09:42.079+02:00
+      updatedTimeString: 2020-12-17T11:42:44.813+02:00
       cacheType: 6
     lastLocksChangedEvent:
       updatedTimeString: 0001-01-01T00:00:00.000+00:00
@@ -54441,13 +54355,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2020-12-15T15:26:43.587+02:00
+    updatedTimeString: 2020-12-16T11:51:00.097+02:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2020-12-15T16:24:58.868+02:00
+    updatedTimeString: 2020-12-17T09:52:24.308+02:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2020-12-15T19:00:02.636+02:00
+    updatedTimeString: 2020-12-17T09:52:23.754+02:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -54492,9 +54406,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1738
+    x: 1745
     y: 73
-    width: 800
+    width: 793
     height: 295
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
@@ -54583,9 +54497,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 497.6
+    y: 466.4
     width: 1204
-    height: 286
+    height: 317
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -54600,20 +54514,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefab
+    - Assets/scripts
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Prefab
+  - Assets/scripts
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f2350000
-    m_LastClickedID: 13810
-    m_ExpandedIDs: 00000000d2350000f6350000f2370000fe37000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: e2350000
+    m_LastClickedID: 13794
+    m_ExpandedIDs: 00000000e0350000e2350000e4350000e6350000f83500000436000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -54641,7 +54555,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2350000d4350000
+    m_ExpandedIDs: 00000000e0350000e2350000e4350000e6350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -54758,15 +54672,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 241
-    height: 403
+    width: 271
+    height: 372
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2e790000
-      m_LastClickedID: 31022
-      m_ExpandedIDs: 2401f9ff1c61f9ff8ee2fbffb8e2fbff3828fcffae28fcff20befcff20fbffffc8340000ec340000fe340000
+      m_SelectedIDs: 1a310000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6afbffffd4340000e23400001e350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -54811,10 +54725,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 242.40001
+    x: 272
     y: 73.6
-    width: 961
-    height: 403
+    width: 931
+    height: 372
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: e6d17b3f441fdfc47bd7e69fb5f3f9d6
@@ -54826,9 +54740,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.0996094, y: -273.5589, z: 9315.587}
+    m_Target: {x: 451.40265, y: 169.88846, z: -184.97876}
     speed: 2
-    m_Value: {x: -4.0996094, y: -273.5589, z: 9315.587}
+    m_Value: {x: 451.40265, y: 169.88846, z: -184.97876}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -54874,13 +54788,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.025801145, y: 0.021588556, z: -0.0005636508, w: -0.99944913}
+    m_Target: {x: -0.027306741, y: 0.0005962116, z: -0.000028284458, w: -0.9996475}
     speed: 2
-    m_Value: {x: -0.025800752, y: 0.021588227, z: -0.0005636422, w: -0.9994339}
+    m_Value: {x: -0.02730618, y: 0.00059619936, z: -0.000028283877, w: -0.999627}
   m_Size:
-    m_Target: 4886.731
+    m_Target: 133.87064
     speed: 2
-    m_Value: 4886.731
+    m_Value: 133.87064
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -54926,10 +54840,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 242.40001
+    x: 272
     y: 73.6
-    width: 961
-    height: 403
+    width: 931
+    height: 372
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -54939,7 +54853,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 961, y: 382}
+  m_TargetSize: {x: 931, y: 351}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -54954,10 +54868,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -384.4
-    m_HBaseRangeMax: 384.4
-    m_VBaseRangeMin: -152.8
-    m_VBaseRangeMax: 152.8
+    m_HBaseRangeMin: -372.4
+    m_HBaseRangeMax: 372.4
+    m_VBaseRangeMin: -140.40001
+    m_VBaseRangeMax: 140.40001
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -54975,23 +54889,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 961
-      height: 382
+      width: 931
+      height: 351
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 480.5, y: 191}
+    m_Translation: {x: 465.5, y: 175.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -480.5
-      y: -191
-      width: 961
-      height: 382
+      x: -465.5
+      y: -175.5
+      width: 931
+      height: 351
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1201.25, y: 503.75}
+  m_LastWindowPixelSize: {x: 1163.75, y: 465}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000

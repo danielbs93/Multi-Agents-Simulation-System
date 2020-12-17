@@ -31,7 +31,7 @@ public class FirstPersonCamera : MonoBehaviour
             _delta = 0;
         }
         
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.F))
             controlEnabled = !controlEnabled;
 
         if (!controlEnabled) return;
