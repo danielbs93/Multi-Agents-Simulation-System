@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Users/USER/Downloads/Multi-Agent-Simulation-System-main/Assets/sokoban.unity
+- path: Assets/Sokoban 1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
