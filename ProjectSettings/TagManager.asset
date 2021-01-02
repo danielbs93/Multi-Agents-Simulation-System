@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - initBrowse
+  - precEffBrowse
+  - planBrowse
+  - initPH
+  - preEffPH
+  - planPH
+  - runSim
   layers:
   - Default
   - TransparentFX

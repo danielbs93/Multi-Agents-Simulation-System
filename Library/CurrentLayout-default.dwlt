@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 504, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 57
+  controlID: 143
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Window
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -68,14 +68,14 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 731
-  m_MinSize: {x: 101, y: 121}
+  m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 107
+  controlID: 144
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 108
+  controlID: 145
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -265,8 +265,8 @@ MonoBehaviour:
     y: 0
     width: 933
     height: 393
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -274,7 +274,7 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -300,16 +300,16 @@ MonoBehaviour:
     width: 330
     height: 710
   m_ViewDataDictionary: {fileID: 0}
-  progressMessageClearTime: 173.1602917
+  progressMessageClearTime: 81985.3703886
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
-  currentTrackingStatusHasUpdate: 0
-  currentStatusEntriesHasUpdate: 0
-  repositoryProgressHasUpdate: 0
+  currentTrackingStatusHasUpdate: 1
+  currentStatusEntriesHasUpdate: 1
+  repositoryProgressHasUpdate: 1
   appManagerProgressHasUpdate: 0
-  changeTab: 3
-  activeTab: 3
+  changeTab: 4
+  activeTab: 4
   initProjectView:
     hasCompletedInitialCheck: 0
     isUserDataPresent: 0
@@ -476,10 +476,10 @@ MonoBehaviour:
     disableDelete: 1
     disableCreate: 1
     lastLocalAndRemoteBranchListChangedEvent:
-      updatedTimeString: 2020-12-09T19:39:13.101+02:00
+      updatedTimeString: 2020-12-25T09:41:43.240+02:00
       cacheType: 2
     lastCurrentBranchAndRemoteChange:
-      updatedTimeString: 2020-12-09T19:39:13.087+02:00
+      updatedTimeString: 2020-12-25T09:41:38.407+02:00
       cacheType: 1
     currentBranch:
       name: main
@@ -582,24 +582,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-        label: shadercompiler-UnityShaderCompiler.exe0.log
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
-          projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
       - path: Library\SourceAssetDB
         label: SourceAssetDB
         level: 1
@@ -638,32 +620,854 @@ MonoBehaviour:
           indexStatus: 0
           workTreeStatus: 0
     gitStatusEntries:
-    - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
-      fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
-      projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
     - path: Library\SourceAssetDB
       fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
       projectPath: Library\SourceAssetDB
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    changedFilesText: 2 changed files
+    changedFilesText: 1 changed file
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2020-12-17T12:58:39.280+02:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2020-12-17T12:57:53.867+02:00
+      updatedTimeString: 2020-12-24T13:05:13.049+02:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2020-12-17T12:56:24.223+02:00
+      updatedTimeString: 2020-12-24T13:04:41.011+02:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
     currentTrackingStatusHasUpdate: 0
     logEntries:
+    - commitID: 6b661c327f4d718dbe78c292040182f27dc5021c
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: test git push
+      description: 
+      timeString: 2020-12-24T13:02:05.000+02:00
+      commitTimeString: 2020-12-24T13:02:05.000+02:00
+      changes:
+      - path: Assembly-CSharp.csproj
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assembly-CSharp.csproj
+        projectPath: Assembly-CSharp.csproj
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\scripts\Parser.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Parser.cs
+        projectPath: Assets\scripts\Parser.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\Parser.cs.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Parser.cs.meta
+        projectPath: Assets\scripts\Parser.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+        projectPath: Library\CurrentLayout-default.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\LastSceneManagerSetup.txt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+        projectPath: Library\LastSceneManagerSetup.txt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SceneVisibilityState.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+        projectPath: Library\SceneVisibilityState.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        projectPath: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: fac6e404b890aca81d6e5aaa8582db3809519ad7
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: Prototype in progress
+      description: 
+      timeString: 2020-12-17T12:57:49.000+02:00
+      commitTimeString: 2020-12-17T12:57:49.000+02:00
+      changes:
+      - path: Assets\Sokoban 1.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Sokoban
+          1.unity
+        projectPath: Assets\Sokoban 1.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Sokoban 1.unity.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Sokoban
+          1.unity.meta
+        projectPath: Assets\Sokoban 1.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\scripts\Utils\FirstPersonCamera.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs
+        projectPath: Assets\scripts\Utils\FirstPersonCamera.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+        projectPath: Library\CurrentLayout-default.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SceneVisibilityState.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+        projectPath: Library\SceneVisibilityState.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+        projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\expandedItems
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+        projectPath: Library\expandedItems
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 25be142b09cd69cb0c2031f4ef3250fa2ac58c82
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: prototype almost done
+      description: 
+      timeString: 2020-12-16T11:50:26.000+02:00
+      commitTimeString: 2020-12-16T11:50:26.000+02:00
+      changes:
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+        projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 539812a80bce1ddc8593185b0c5edfd0187ff0eb
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: Prototype almost done
+      description: 
+      timeString: 2020-12-15T22:16:50.000+02:00
+      commitTimeString: 2020-12-15T22:16:50.000+02:00
+      changes:
+      - path: Assets\Images.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images.meta
+        projectPath: Assets\Images.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Images\bg.jpg
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg
+        projectPath: Assets\Images\bg.jpg
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Images\bg.jpg.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg.meta
+        projectPath: Assets\Images\bg.jpg.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\Cube.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Cube.prefab
+        projectPath: Assets\Prefab\Cube.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\CubeGoal.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+        projectPath: Assets\Prefab\CubeGoal.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\Sphere.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Sphere.prefab
+        projectPath: Assets\Prefab\Sphere.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\boxcontainer.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\boxcontainer.prefab
+        projectPath: Assets\Prefab\boxcontainer.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab
+        projectPath: Assets\Prefab\goall.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab.meta
+        projectPath: Assets\Prefab\goall.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\scripts\MapGenerator.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+        projectPath: Assets\scripts\MapGenerator.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\sokoban.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+        projectPath: Assets\sokoban.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        projectPath: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        projectPath: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        projectPath: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        projectPath: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        projectPath: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+        projectPath: Library\CurrentLayout-default.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\InspectorExpandedItems.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+        projectPath: Library\InspectorExpandedItems.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\LastSceneManagerSetup.txt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+        projectPath: Library\LastSceneManagerSetup.txt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SceneVisibilityState.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+        projectPath: Library\SceneVisibilityState.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ShaderCache\EditorEncounteredVariants
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+        projectPath: Library\ShaderCache\EditorEncounteredVariants
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+        projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\expandedItems
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+        projectPath: Library\expandedItems
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 089f27cc4a7fa50df84ee8a8f8da4ff78efb72cd
+      mergeA: 
+      mergeB: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: dbs commit
+      description: 
+      timeString: 2020-12-15T14:14:51.000+02:00
+      commitTimeString: 2020-12-15T14:14:51.000+02:00
+      changes:
+      - path: Assembly-CSharp.csproj
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assembly-CSharp.csproj
+        projectPath: Assembly-CSharp.csproj
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Materials\BackGround_Color.mat
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\BackGround_Color.mat
+        projectPath: Assets\Materials\BackGround_Color.mat
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Materials\BackGround_Color.mat.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\BackGround_Color.mat.meta
+        projectPath: Assets\Materials\BackGround_Color.mat.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Materials\Goal_Color.mat
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Goal_Color.mat
+        projectPath: Assets\Materials\Goal_Color.mat
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Materials\Goal_Color.mat.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Goal_Color.mat.meta
+        projectPath: Assets\Materials\Goal_Color.mat.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Materials\Ground_color.mat
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Ground_color.mat
+        projectPath: Assets\Materials\Ground_color.mat
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Materials\Ground_color.mat.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Ground_color.mat.meta
+        projectPath: Assets\Materials\Ground_color.mat.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Particle Attractor by Moonflower Carnivore\Prefabs\Particle
+          revolver 002 Eternal charge.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Particle
+          Attractor by Moonflower Carnivore\Prefabs\Particle revolver 002 Eternal
+          charge.prefab
+        projectPath: Assets\Particle Attractor by Moonflower Carnivore\Prefabs\Particle
+          revolver 002 Eternal charge.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2\libgit2.bundle
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\libgit2.bundle
+        projectPath: Assets\Plugins\LibGit2\libgit2.bundle
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2\libgit2.bundle.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\libgit2.bundle.meta
+        projectPath: Assets\Plugins\LibGit2\libgit2.bundle.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2\x86\libgit2.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\x86\libgit2.dll
+        projectPath: Assets\Plugins\LibGit2\x86\libgit2.dll
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+        projectPath: Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2Sharp.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp.meta
+        projectPath: Assets\Plugins\LibGit2Sharp.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2Sharp\Editor.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor.meta
+        projectPath: Assets\Plugins\LibGit2Sharp\Editor.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+        projectPath: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+        projectPath: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\WindowsCredentialManagement.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement.meta
+        projectPath: Assets\Plugins\WindowsCredentialManagement.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\WindowsCredentialManagement\Editor.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor.meta
+        projectPath: Assets\Plugins\WindowsCredentialManagement\Editor.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+        projectPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+        projectPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Prefab\BackGround.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\BackGround.prefab
+        projectPath: Assets\Prefab\BackGround.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\BackGround.prefab.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\BackGround.prefab.meta
+        projectPath: Assets\Prefab\BackGround.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\CubeGoal.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+        projectPath: Assets\Prefab\CubeGoal.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\CubeGoal.prefab.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab.meta
+        projectPath: Assets\Prefab\CubeGoal.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\Ground.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Ground.prefab
+        projectPath: Assets\Prefab\Ground.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\Ground.prefab.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Ground.prefab.meta
+        projectPath: Assets\Prefab\Ground.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\scripts\MapGenerator.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+        projectPath: Assets\scripts\MapGenerator.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\MapGenerator.cs.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs.meta
+        projectPath: Assets\scripts\MapGenerator.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\Utils.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils.meta
+        projectPath: Assets\scripts\Utils.meta
+        originalPath: Assets\Plugins\LibGit2\x86.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\scripts\Utils\FirstPersonCamera.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs
+        projectPath: Assets\scripts\Utils\FirstPersonCamera.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\Utils\FirstPersonCamera.cs.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs.meta
+        projectPath: Assets\scripts\Utils\FirstPersonCamera.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\mapp.cs.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\mapp.cs.meta
+        projectPath: Assets\scripts\mapp.cs.meta
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\sokoban.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+        projectPath: Assets\sokoban.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\APIUpdater\project-dependencies.graph
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\APIUpdater\project-dependencies.graph
+        projectPath: Library\APIUpdater\project-dependencies.graph
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+        projectPath: Library\CurrentLayout-default.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\InspectorExpandedItems.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+        projectPath: Library\InspectorExpandedItems.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+        projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+        projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+        projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+        projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+        projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.Timeline.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.dll
+        projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+        projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+        projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\UnityEditor.UI.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.UI.dll
+        projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+        projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\UnityEngine.UI.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.UI.dll
+        projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ShaderCache\EditorEncounteredVariants
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+        projectPath: Library\ShaderCache\EditorEncounteredVariants
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+        projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        projectPath: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+        projectPath: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     - commitID: 9ca05d285e7e9861089f06932ee3b846ccd56074
       mergeA: 
       mergeB: 
@@ -27231,14 +28035,842 @@ MonoBehaviour:
         workTreeStatus: 0
     statusAhead: 0
     lastLogChangedEvent:
-      updatedTimeString: 2020-12-15T10:52:24.260+02:00
+      updatedTimeString: 2020-12-24T13:08:34.768+02:00
       cacheType: 3
     lastTrackingStatusChangedEvent:
-      updatedTimeString: 2020-12-15T10:52:22.872+02:00
+      updatedTimeString: 2020-12-24T13:30:40.344+02:00
       cacheType: 5
     historyControl:
       scroll: {x: 0, y: 0}
       entries:
+      - commitID: 6b661c327f4d718dbe78c292040182f27dc5021c
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: test git push
+        description: 
+        timeString: 2020-12-24T13:02:05.000+02:00
+        commitTimeString: 2020-12-24T13:02:05.000+02:00
+        changes:
+        - path: Assembly-CSharp.csproj
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assembly-CSharp.csproj
+          projectPath: Assembly-CSharp.csproj
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\scripts\Parser.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Parser.cs
+          projectPath: Assets\scripts\Parser.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\Parser.cs.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Parser.cs.meta
+          projectPath: Assets\scripts\Parser.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\CurrentLayout-default.dwlt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+          projectPath: Library\CurrentLayout-default.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\LastSceneManagerSetup.txt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+          projectPath: Library\LastSceneManagerSetup.txt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SceneVisibilityState.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+          projectPath: Library\SceneVisibilityState.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          projectPath: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: fac6e404b890aca81d6e5aaa8582db3809519ad7
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: Prototype in progress
+        description: 
+        timeString: 2020-12-17T12:57:49.000+02:00
+        commitTimeString: 2020-12-17T12:57:49.000+02:00
+        changes:
+        - path: Assets\Sokoban 1.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Sokoban
+            1.unity
+          projectPath: Assets\Sokoban 1.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Sokoban 1.unity.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Sokoban
+            1.unity.meta
+          projectPath: Assets\Sokoban 1.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\scripts\Utils\FirstPersonCamera.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs
+          projectPath: Assets\scripts\Utils\FirstPersonCamera.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\CurrentLayout-default.dwlt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+          projectPath: Library\CurrentLayout-default.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SceneVisibilityState.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+          projectPath: Library\SceneVisibilityState.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\expandedItems
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+          projectPath: Library\expandedItems
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 25be142b09cd69cb0c2031f4ef3250fa2ac58c82
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: prototype almost done
+        description: 
+        timeString: 2020-12-16T11:50:26.000+02:00
+        commitTimeString: 2020-12-16T11:50:26.000+02:00
+        changes:
+        - path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 539812a80bce1ddc8593185b0c5edfd0187ff0eb
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: Prototype almost done
+        description: 
+        timeString: 2020-12-15T22:16:50.000+02:00
+        commitTimeString: 2020-12-15T22:16:50.000+02:00
+        changes:
+        - path: Assets\Images.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images.meta
+          projectPath: Assets\Images.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Images\bg.jpg
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg
+          projectPath: Assets\Images\bg.jpg
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Images\bg.jpg.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg.meta
+          projectPath: Assets\Images\bg.jpg.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\Cube.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Cube.prefab
+          projectPath: Assets\Prefab\Cube.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Prefab\CubeGoal.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+          projectPath: Assets\Prefab\CubeGoal.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Prefab\Sphere.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Sphere.prefab
+          projectPath: Assets\Prefab\Sphere.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Prefab\boxcontainer.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\boxcontainer.prefab
+          projectPath: Assets\Prefab\boxcontainer.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Prefab\goall.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab
+          projectPath: Assets\Prefab\goall.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\goall.prefab.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab.meta
+          projectPath: Assets\Prefab\goall.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\scripts\MapGenerator.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+          projectPath: Assets\scripts\MapGenerator.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\sokoban.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+          projectPath: Assets\sokoban.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          projectPath: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          projectPath: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          projectPath: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          projectPath: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          projectPath: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Library\CurrentLayout-default.dwlt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+          projectPath: Library\CurrentLayout-default.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\InspectorExpandedItems.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+          projectPath: Library\InspectorExpandedItems.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\LastSceneManagerSetup.txt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+          projectPath: Library\LastSceneManagerSetup.txt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SceneVisibilityState.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+          projectPath: Library\SceneVisibilityState.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ShaderCache\EditorEncounteredVariants
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+          projectPath: Library\ShaderCache\EditorEncounteredVariants
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\expandedItems
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+          projectPath: Library\expandedItems
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 089f27cc4a7fa50df84ee8a8f8da4ff78efb72cd
+        mergeA: 
+        mergeB: 
+        authorName: danielbs93
+        authorEmail: danielbs093@gmail.com
+        commitEmail: danielbs093@gmail.com
+        commitName: danielbs93
+        summary: dbs commit
+        description: 
+        timeString: 2020-12-15T14:14:51.000+02:00
+        commitTimeString: 2020-12-15T14:14:51.000+02:00
+        changes:
+        - path: Assembly-CSharp.csproj
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assembly-CSharp.csproj
+          projectPath: Assembly-CSharp.csproj
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Materials\BackGround_Color.mat
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\BackGround_Color.mat
+          projectPath: Assets\Materials\BackGround_Color.mat
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Materials\BackGround_Color.mat.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\BackGround_Color.mat.meta
+          projectPath: Assets\Materials\BackGround_Color.mat.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Materials\Goal_Color.mat
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Goal_Color.mat
+          projectPath: Assets\Materials\Goal_Color.mat
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Materials\Goal_Color.mat.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Goal_Color.mat.meta
+          projectPath: Assets\Materials\Goal_Color.mat.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Materials\Ground_color.mat
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Ground_color.mat
+          projectPath: Assets\Materials\Ground_color.mat
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Materials\Ground_color.mat.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Materials\Ground_color.mat.meta
+          projectPath: Assets\Materials\Ground_color.mat.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Particle Attractor by Moonflower Carnivore\Prefabs\Particle
+            revolver 002 Eternal charge.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Particle
+            Attractor by Moonflower Carnivore\Prefabs\Particle revolver 002 Eternal
+            charge.prefab
+          projectPath: Assets\Particle Attractor by Moonflower Carnivore\Prefabs\Particle
+            revolver 002 Eternal charge.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2\libgit2.bundle
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\libgit2.bundle
+          projectPath: Assets\Plugins\LibGit2\libgit2.bundle
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2\libgit2.bundle.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\libgit2.bundle.meta
+          projectPath: Assets\Plugins\LibGit2\libgit2.bundle.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2\x86\libgit2.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\x86\libgit2.dll
+          projectPath: Assets\Plugins\LibGit2\x86\libgit2.dll
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+          projectPath: Assets\Plugins\LibGit2\x86\libgit2.dll.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2Sharp.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp.meta
+          projectPath: Assets\Plugins\LibGit2Sharp.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2Sharp\Editor.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor.meta
+          projectPath: Assets\Plugins\LibGit2Sharp\Editor.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+          projectPath: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+          projectPath: Assets\Plugins\LibGit2Sharp\Editor\LibGit2SharpUnity.dll.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\WindowsCredentialManagement.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement.meta
+          projectPath: Assets\Plugins\WindowsCredentialManagement.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\WindowsCredentialManagement\Editor.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor.meta
+          projectPath: Assets\Plugins\WindowsCredentialManagement\Editor.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+          projectPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+          projectPath: Assets\Plugins\WindowsCredentialManagement\Editor\CredentialManagement.dll.meta
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Prefab\BackGround.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\BackGround.prefab
+          projectPath: Assets\Prefab\BackGround.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\BackGround.prefab.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\BackGround.prefab.meta
+          projectPath: Assets\Prefab\BackGround.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\CubeGoal.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+          projectPath: Assets\Prefab\CubeGoal.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\CubeGoal.prefab.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab.meta
+          projectPath: Assets\Prefab\CubeGoal.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\Ground.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Ground.prefab
+          projectPath: Assets\Prefab\Ground.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefab\Ground.prefab.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Ground.prefab.meta
+          projectPath: Assets\Prefab\Ground.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\scripts\MapGenerator.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+          projectPath: Assets\scripts\MapGenerator.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\MapGenerator.cs.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs.meta
+          projectPath: Assets\scripts\MapGenerator.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\Utils.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils.meta
+          projectPath: Assets\scripts\Utils.meta
+          originalPath: Assets\Plugins\LibGit2\x86.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\scripts\Utils\FirstPersonCamera.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs
+          projectPath: Assets\scripts\Utils\FirstPersonCamera.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\Utils\FirstPersonCamera.cs.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\Utils\FirstPersonCamera.cs.meta
+          projectPath: Assets\scripts\Utils\FirstPersonCamera.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\scripts\mapp.cs.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\mapp.cs.meta
+          projectPath: Assets\scripts\mapp.cs.meta
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\sokoban.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+          projectPath: Assets\sokoban.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\APIUpdater\project-dependencies.graph
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\APIUpdater\project-dependencies.graph
+          projectPath: Library\APIUpdater\project-dependencies.graph
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\CurrentLayout-default.dwlt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+          projectPath: Library\CurrentLayout-default.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\InspectorExpandedItems.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+          projectPath: Library\InspectorExpandedItems.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+          projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+          projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+          projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+          projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+          projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.Timeline.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.Timeline.dll
+          projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+          projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+          projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\UnityEditor.UI.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEditor.UI.dll
+          projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+          projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ScriptAssemblies\UnityEngine.UI.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\UnityEngine.UI.dll
+          projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\ShaderCache\EditorEncounteredVariants
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+          projectPath: Library\ShaderCache\EditorEncounteredVariants
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe0.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          projectPath: obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+          projectPath: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       - commitID: 9ca05d285e7e9861089f06932ee3b846ccd56074
         mergeA: 
         mergeB: 
@@ -53816,37 +55448,1415 @@ MonoBehaviour:
           indexStatus: 4
           workTreeStatus: 0
       statusAhead: 0
-      selectedIndex: -1
+      selectedIndex: 3
     selectedEntry:
-      commitID: 
+      commitID: 539812a80bce1ddc8593185b0c5edfd0187ff0eb
       mergeA: 
       mergeB: 
-      authorName: 
-      authorEmail: 
-      commitEmail: 
-      commitName: 
-      summary: 
+      authorName: danielbs93
+      authorEmail: danielbs093@gmail.com
+      commitEmail: danielbs093@gmail.com
+      commitName: danielbs93
+      summary: Prototype almost done
       description: 
-      timeString: 0001-01-01T00:00:00.000+00:00
-      commitTimeString: 0001-01-01T00:00:00.000+00:00
-      changes: []
+      timeString: 2020-12-15T22:16:50.000+02:00
+      commitTimeString: 2020-12-15T22:16:50.000+02:00
+      changes:
+      - path: Assets\Images.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images.meta
+        projectPath: Assets\Images.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Images\bg.jpg
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg
+        projectPath: Assets\Images\bg.jpg
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Images\bg.jpg.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg.meta
+        projectPath: Assets\Images\bg.jpg.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\Cube.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Cube.prefab
+        projectPath: Assets\Prefab\Cube.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\CubeGoal.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+        projectPath: Assets\Prefab\CubeGoal.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\Sphere.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Sphere.prefab
+        projectPath: Assets\Prefab\Sphere.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\boxcontainer.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\boxcontainer.prefab
+        projectPath: Assets\Prefab\boxcontainer.prefab
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab
+        projectPath: Assets\Prefab\goall.prefab
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab.meta
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab.meta
+        projectPath: Assets\Prefab\goall.prefab.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\scripts\MapBuilder.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+        projectPath: Assets\scripts\MapBuilder.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\scripts\MapGenerator.cs
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+        projectPath: Assets\scripts\MapGenerator.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\sokoban.unity
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+        projectPath: Assets\sokoban.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ArtifactDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+        projectPath: Library\ArtifactDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        projectPath: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        projectPath: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        projectPath: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        projectPath: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        projectPath: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+        projectPath: Library\CurrentLayout-default.dwlt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\InspectorExpandedItems.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+        projectPath: Library\InspectorExpandedItems.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\LastSceneManagerSetup.txt
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+        projectPath: Library\LastSceneManagerSetup.txt
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SceneVisibilityState.asset
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+        projectPath: Library\SceneVisibilityState.asset
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+        projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\ShaderCache\EditorEncounteredVariants
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+        projectPath: Library\ShaderCache\EditorEncounteredVariants
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+        projectPath: Library\SourceAssetDB
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+        projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\expandedItems
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+        projectPath: Library\expandedItems
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+        projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
     treeChanges:
       assets:
         keys: []
         values: []
       folders:
-        keys: []
-        values: []
+        keys:
+        - Assets
+        - Assets\Images
+        - Assets\Prefab
+        - Assets\scripts
+        - Library
+        - Library\Artifacts
+        - Library\Artifacts\25
+        - Library\Artifacts\27
+        - Library\Artifacts\85
+        - Library\Artifacts\9d
+        - Library\Artifacts\ee
+        - Library\ScriptAssemblies
+        - Library\ShaderCache
+        - Library\StateCache
+        - Library\StateCache\Hierarchy
+        - Library\StateCache\SceneView
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Images
+          label: Images
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Prefab
+          label: Prefab
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\scripts
+          label: scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library
+          label: Library
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts
+          label: Artifacts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts\25
+          label: 25
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts\27
+          label: 27
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts\85
+          label: 85
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts\9d
+          label: 9d
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\Artifacts\ee
+          label: ee
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\ScriptAssemblies
+          label: ScriptAssemblies
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\ShaderCache
+          label: ShaderCache
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\StateCache
+          label: StateCache
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\StateCache\Hierarchy
+          label: Hierarchy
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Library\StateCache\SceneView
+          label: SceneView
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
       checkedFileNodes:
         keys: []
         values: []
       title: 
-      pathSeparator: /
+      pathSeparator: \
       displayRootNode: 0
       isSelectable: 1
       isCheckable: 0
       isUsingGlobalSelection: 0
-      nodes: []
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets
+        label: Assets
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Images.meta
+        label: Images.meta
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Images.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images.meta
+          projectPath: Assets\Images.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Images
+        label: Images
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Images\bg.jpg
+        label: bg.jpg
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Images\bg.jpg
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg
+          projectPath: Assets\Images\bg.jpg
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Images\bg.jpg.meta
+        label: bg.jpg.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Images\bg.jpg.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Images\bg.jpg.meta
+          projectPath: Assets\Images\bg.jpg.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Prefab
+        label: Prefab
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Prefab\Cube.prefab
+        label: Cube.prefab
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\Cube.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Cube.prefab
+          projectPath: Assets\Prefab\Cube.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\Prefab\CubeGoal.prefab
+        label: CubeGoal.prefab
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\CubeGoal.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\CubeGoal.prefab
+          projectPath: Assets\Prefab\CubeGoal.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\Prefab\Sphere.prefab
+        label: Sphere.prefab
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\Sphere.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\Sphere.prefab
+          projectPath: Assets\Prefab\Sphere.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\Prefab\boxcontainer.prefab
+        label: boxcontainer.prefab
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\boxcontainer.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\boxcontainer.prefab
+          projectPath: Assets\Prefab\boxcontainer.prefab
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab
+        label: goall.prefab
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\goall.prefab
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab
+          projectPath: Assets\Prefab\goall.prefab
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\Prefab\goall.prefab.meta
+        label: goall.prefab.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefab\goall.prefab.meta
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\Prefab\goall.prefab.meta
+          projectPath: Assets\Prefab\goall.prefab.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - path: Assets\scripts
+        label: scripts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\scripts\MapBuilder.cs
+        label: MapBuilder.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\scripts\MapBuilder.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapBuilder.cs
+          projectPath: Assets\scripts\MapBuilder.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\scripts\MapGenerator.cs
+        label: MapGenerator.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\scripts\MapGenerator.cs
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\scripts\MapGenerator.cs
+          projectPath: Assets\scripts\MapGenerator.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Assets\sokoban.unity
+        label: sokoban.unity
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\sokoban.unity
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Assets\sokoban.unity
+          projectPath: Assets\sokoban.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library
+        label: Library
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\ArtifactDB
+        label: ArtifactDB
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\ArtifactDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ArtifactDB
+          projectPath: Library\ArtifactDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\Artifacts
+        label: Artifacts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\25
+        label: 25
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+        label: 253719faa37b1670ba23e9bab245fa7f
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          projectPath: Library\Artifacts\25\253719faa37b1670ba23e9bab245fa7f
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+      - path: Library\Artifacts\27
+        label: 27
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+        label: 2716a9e613be37fd48d2517e1e4f4594
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          projectPath: Library\Artifacts\27\2716a9e613be37fd48d2517e1e4f4594
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+      - path: Library\Artifacts\85
+        label: 85
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+        label: 8511d67cdcce948d0f26a30ef8336dd8
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          projectPath: Library\Artifacts\85\8511d67cdcce948d0f26a30ef8336dd8
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+      - path: Library\Artifacts\9d
+        label: 9d
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+        label: 9dac228d0b5f3669a5655a20e3be78ed
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          projectPath: Library\Artifacts\9d\9dac228d0b5f3669a5655a20e3be78ed
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+      - path: Library\Artifacts\ee
+        label: ee
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+        label: eec048199c6412e9bd2fb70dd8191866
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          projectPath: Library\Artifacts\ee\eec048199c6412e9bd2fb70dd8191866
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+      - path: Library\CurrentLayout-default.dwlt
+        label: CurrentLayout-default.dwlt
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\CurrentLayout-default.dwlt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\CurrentLayout-default.dwlt
+          projectPath: Library\CurrentLayout-default.dwlt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\InspectorExpandedItems.asset
+        label: InspectorExpandedItems.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\InspectorExpandedItems.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\InspectorExpandedItems.asset
+          projectPath: Library\InspectorExpandedItems.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\LastSceneManagerSetup.txt
+        label: LastSceneManagerSetup.txt
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\LastSceneManagerSetup.txt
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\LastSceneManagerSetup.txt
+          projectPath: Library\LastSceneManagerSetup.txt
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\SceneVisibilityState.asset
+        label: SceneVisibilityState.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\SceneVisibilityState.asset
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SceneVisibilityState.asset
+          projectPath: Library\SceneVisibilityState.asset
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\ScriptAssemblies
+        label: ScriptAssemblies
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.dll
+        label: Assembly-CSharp.dll
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\ScriptAssemblies\Assembly-CSharp.dll
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.dll
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+        label: Assembly-CSharp.pdb
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ScriptAssemblies\Assembly-CSharp.pdb
+          projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\ShaderCache
+        label: ShaderCache
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\ShaderCache\EditorEncounteredVariants
+        label: EditorEncounteredVariants
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\ShaderCache\EditorEncounteredVariants
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\ShaderCache\EditorEncounteredVariants
+          projectPath: Library\ShaderCache\EditorEncounteredVariants
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\SourceAssetDB
+        label: SourceAssetDB
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\SourceAssetDB
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\SourceAssetDB
+          projectPath: Library\SourceAssetDB
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\StateCache
+        label: StateCache
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy
+        label: Hierarchy
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+        label: 2c3dc4-mainStage.json
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          projectPath: Library\StateCache\Hierarchy\2c3dc4-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\StateCache\SceneView
+        label: SceneView
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Library\StateCache\SceneView\e6d17b-mainStage.json
+        label: e6d17b-mainStage.json
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\StateCache\SceneView\e6d17b-mainStage.json
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\StateCache\SceneView\e6d17b-mainStage.json
+          projectPath: Library\StateCache\SceneView\e6d17b-mainStage.json
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\expandedItems
+        label: expandedItems
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\expandedItems
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\expandedItems
+          projectPath: Library\expandedItems
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+        label: shadercompiler-UnityShaderCompiler.exe1.log
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe1.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe1.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+        label: shadercompiler-UnityShaderCompiler.exe2.log
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe2.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe2.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+        label: shadercompiler-UnityShaderCompiler.exe3.log
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          fullPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2\Library\shadercompiler-UnityShaderCompiler.exe3.log
+          projectPath: Library\shadercompiler-UnityShaderCompiler.exe3.log
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
       selectedNode:
         path: 
         label: 
@@ -53877,7 +56887,7 @@ MonoBehaviour:
       changingManually: 0
     hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 2020-12-15T10:51:25.876+02:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 1
     metricsEnabled: 1
     newRepositoryRemoteUrl: https://github.com/danielbs93/Multi-Agent-Simulation-System
@@ -53891,7 +56901,7 @@ MonoBehaviour:
       newGitEmail: danielbs093@gmail.com
       needsSaving: 0
       lastCheckUserChangedEvent:
-        updatedTimeString: 2020-12-15T10:47:17.318+02:00
+        updatedTimeString: 2020-12-24T12:56:59.801+02:00
         cacheType: 8
     webTimeout: 3000
     gitTimeout: 5000
@@ -53956,13 +56966,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2020-12-17T12:58:39.280+02:00
+    updatedTimeString: 2020-12-25T09:41:38.407+02:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2020-12-17T12:58:37.776+02:00
+    updatedTimeString: 2020-12-25T09:42:03.931+02:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2020-12-17T12:57:53.867+02:00
+    updatedTimeString: 2020-12-25T09:42:03.807+02:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -53980,7 +56990,7 @@ MonoBehaviour:
     m_Text: Fetch
     m_Image: {fileID: 0}
     m_Tooltip: 
-  repositoryProgressValue: 1
+  repositoryProgressValue: 0.5
   repositoryProgressMessage: Reading locks...
   appManagerProgressValue: 1
   appManagerProgressMessage: Initialized
@@ -54002,7 +57012,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54066,15 +57076,15 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -4391848389275900105, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1738
-    y: 73
-    width: 800
-    height: 295
+    x: 272
+    y: 73.6
+    width: 931
+    height: 372
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &15
 MonoBehaviour:
@@ -54092,7 +57102,7 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54115,20 +57125,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/scripts
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets
+  - Assets/scripts
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\USER\Desktop\Unity Projects\UnityLessons\Sokoban_2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: b6350000
-    m_LastClickedID: 13750
-    m_ExpandedIDs: 00000000b6350000b8350000ba350000bc350000be35000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 16360000
+    m_LastClickedID: 13846
+    m_ExpandedIDs: 0000000014360000183600001a3600003c36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -54156,7 +57166,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6350000b8350000ba350000bc350000be350000
+    m_ExpandedIDs: 000000001436000016360000183600001a3600001c360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -54228,7 +57238,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54266,7 +57276,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -9000905672528348964, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54279,9 +57289,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 52faffff6afbffff
+      m_SelectedIDs: 84370000
+      m_LastClickedID: 14212
+      m_ExpandedIDs: 0cfaffff64faffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -54321,7 +57331,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54391,7 +57401,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.027306741, y: 0.0005962116, z: -0.000028284458, w: -0.9996475}
     speed: 2
-    m_Value: {x: -0.027306743, y: 0.0005962116, z: -0.000028284458, w: -0.99964756}
+    m_Value: {x: -0.02730618, y: 0.00059619936, z: -0.000028283877, w: -0.999627}
   m_Size:
     m_Target: 133.87064
     speed: 2
@@ -54436,7 +57446,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -54469,10 +57479,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -465.5
-    m_HBaseRangeMax: 465.5
-    m_VBaseRangeMin: -186
-    m_VBaseRangeMax: 186
+    m_HBaseRangeMin: -372.4
+    m_HBaseRangeMax: 372.4
+    m_VBaseRangeMin: -140.40001
+    m_VBaseRangeMax: 140.40001
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -54489,11 +57499,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 931
-      height: 372
+      height: 351
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 465.5, y: 186}
+    m_Translation: {x: 465.5, y: 175.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -54501,12 +57511,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -465.5
-      y: -186
+      y: -175.5
       width: 931
-      height: 372
+      height: 351
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 931, y: 372}
+  m_LastWindowPixelSize: {x: 1163.75, y: 465}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -54528,7 +57538,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
