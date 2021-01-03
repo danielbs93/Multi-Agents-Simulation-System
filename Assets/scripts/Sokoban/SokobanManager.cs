@@ -383,8 +383,8 @@ public class SokobanManager : MonoBehaviour
             }
 
             // Vector3 newPos = anim.bodyPosition +  new Vector3(-1, 0, 0);
-            anim.transform.Rotate(agents[i].GetComponent<Rigidbody2D>().transform.right);
-            // anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
+            // anim.transform.Rotate(agents[i].GetComponent<Rigidbody2D>().transform.right);
+            anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
             // anim.transform.Rotate(anim.bodyPosition);
             // controller.Move(moveDirection * Time.deltaTime);
             // moveDirection.y -= gravity * Time.deltaTime;
