@@ -8,10 +8,6 @@ public class SokobanManager : MonoBehaviour
 {
 
     //Objects
-    public Canvas canvas;
-    public Canvas canvasmenu;
-    public Canvas endingScreen;
-
     public GameObject simulationManager;
 
     public GameObject maphold;
@@ -47,14 +43,6 @@ public class SokobanManager : MonoBehaviour
     void Start()
     {
 
-    }
-
-    // Menu option for returning to the main page
-    public void backmenu()
-    {
-        canvas.gameObject.SetActive(true);
-        canvasmenu.gameObject.SetActive(false);
-        //cong.gameObject.SetActive(false);
     }
 
     public void setSokobanPaths(string init, string preEff, string plan)
@@ -151,8 +139,6 @@ public class SokobanManager : MonoBehaviour
     {
         if (goals.Length != 0 && checkwin())
         {
-            endingScreen.gameObject.SetActive(true);
-            canvasmenu.gameObject.SetActive(true);
             Deactivate(agent);
             maphold.SetActive(false);
             return;
