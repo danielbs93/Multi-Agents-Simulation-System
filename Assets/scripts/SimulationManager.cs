@@ -117,6 +117,7 @@ public class SimulationManager : MonoBehaviour
         sokobanScript = (SokobanManager)sokobanManager.GetComponent(typeof(SokobanManager));
         sokobanScript.setSokobanPaths(initPath, preconditionEffectsPath, planPath);
         sokobanScript.initParser();
+        sokobanScript.planParser();
         sokobanScript.setmap();
     }
 

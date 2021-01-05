@@ -9,8 +9,8 @@ public class sokobanParser {
 
     public Dictionary<string, object> information; // dimensions, movements, #goals,#agents,..
     public string[,] domain;
-    private int playerCounter = 0;
-    private int stonesCounter = 0;
+    private int playerCounter = 1;
+    private int stonesCounter = 1;
 
     public sokobanParser(string path) {
             information = new Dictionary<string, object>();
@@ -84,7 +84,7 @@ public class sokobanParser {
             string[] playerPositions = temp2.Split('-');
 
             // insert player position into the domain 2D array
-            domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h"+ this.playerCounter;
+            domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0"+ this.playerCounter;
             playerCounter++;
             counter++;
 
@@ -92,17 +92,27 @@ public class sokobanParser {
                 string temp3 = problemPlayer[counter].Substring(18, problemPlayer[counter].Length - 19);
                 //insert stone position into the domain 2D array
                 string[] stonePositions = temp3.Split('-');
-                domain[Int32.Parse(stonePositions[0]) - 1, Int32.Parse(stonePositions[1]) - 1] = "b" + stonesCounter;
+                if (stonesCounter < 10){
+                    domain[Int32.Parse(stonePositions[0]) - 1, Int32.Parse(stonePositions[1]) - 1] = "b0" + stonesCounter;
+                }
+                else
+                    domain[Int32.Parse(stonePositions[0]) - 1, Int32.Parse(stonePositions[1]) - 1] = "b" + stonesCounter;
                 counter++;
                 stonesCounter++;
             }
+
+            while (!problemPlayer[counter].Contains("clear pos"))
+                counter++;
 
             while (problemPlayer[counter].Contains("clear pos"))
             {
                 string temp4 = problemPlayer[counter].Substring(12, problemPlayer[counter].Length - 13);
                 //insert clear position into the domain 2D array
                 string[] clearPositions = temp4.Split('-');
-                domain[Int32.Parse(clearPositions[0]) - 1, Int32.Parse(clearPositions[1]) - 1 ] = "c";
+                if (domain[Int32.Parse(clearPositions[0]) - 1, Int32.Parse(clearPositions[1]) - 1] == null)
+                {
+                    domain[Int32.Parse(clearPositions[0]) - 1, Int32.Parse(clearPositions[1]) - 1] = "c";
+                }
 
                 counter++;
             }
@@ -113,7 +123,11 @@ public class sokobanParser {
                 // insert goal positions into the domain 2D array
                 string temp1 = problemPlayer[currCounter].Substring(14, problemPlayer[currCounter].Length - 15);
                 string[] goalPositions = temp1.Split('-');
-                domain[Int32.Parse(goalPositions[0]) - 1, Int32.Parse(goalPositions[1]) - 1] = "g";
+                if (domain[Int32.Parse(goalPositions[0]) - 1, Int32.Parse(goalPositions[1]) - 1] == null 
+                || !domain[Int32.Parse(goalPositions[0]) - 1, Int32.Parse(goalPositions[1]) - 1].StartsWith("b"))
+                {
+                    domain[Int32.Parse(goalPositions[0]) - 1, Int32.Parse(goalPositions[1]) - 1] = "g";
+                }
                 numOfGoals++;
                 currCounter++;
             }
@@ -128,7 +142,10 @@ public class sokobanParser {
                     string[] playerPositions = temp.Split('-');
 
                     // insert player position into the domain 2D array
-                    domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h" + playerCounter;
+                    if (playerCounter <10) 
+                        domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0" + playerCounter;
+                    else
+                        domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0" + playerCounter;
                     playerCounter++;
                 }
             }

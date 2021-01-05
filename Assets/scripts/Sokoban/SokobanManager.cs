@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Threading;
 
 public class SokobanManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SokobanManager : MonoBehaviour
     public GameObject goal;
     public GameObject floor;
 
+
     public GameObject[] agents;
     public GameObject[] walls;
     public GameObject[] boxes;
@@ -25,19 +27,23 @@ public class SokobanManager : MonoBehaviour
     public GameObject[] floors;
 
     //Fields
-    private sokobanParser sokoban_Parser;// = new sokobanParser("C:\\Users\\alona\\Desktop\\Studies\\p05");
+    private sokobanParser sokobanParser;// = new sokobanParser("C:\\Users\\alona\\Desktop\\Studies\\p05");
+
+    private sokobanPlanParser sokobanPlanParser;
     public SimulationObject[,,] map;
 
     private bool controlEnabled = false; // Face Camera option was clicked ('c' in keyboard)
     private bool keyboardPlayer = true; // Prototype option - Agent moves currently with the 
 
-    private List<KeyValuePair<int, string>> actions; // List of agents actions from the plan file 
+    private List<Action> actions; // List of agents actions from the plan file 
 
     private string initPath;
     private string preEffPath;
     private string planPath;
 
     int blockSize = 1;  // size of each block
+
+    int actionCounter = 0;
 
     // Use this for initialization
     void Start()
@@ -54,7 +60,12 @@ public class SokobanManager : MonoBehaviour
 
     public void initParser()
     {
-        sokoban_Parser = new sokobanParser(Path.GetDirectoryName(initPath));
+        sokobanParser = new sokobanParser(Path.GetDirectoryName(initPath));
+    }
+
+    public void planParser()
+    {
+        sokobanPlanParser = new sokobanPlanParser(planPath);
     }
 
 
@@ -67,12 +78,14 @@ public class SokobanManager : MonoBehaviour
         //map = sokoban_Parser.generateMap();
 
         //------generating map of char array by the parser---------
-        SimulationObject[,,] char_map = sokoban_Parser.initializeMap();
+        SimulationObject[,,] char_map = sokobanParser.initializeMap();
 
-        int countbox = Convert.ToInt32(sokoban_Parser.information["numOfStones"]); // # of boxes / goals
-        int countwall = Convert.ToInt32(sokoban_Parser.information["numOfWalls"]); 
-        int countgoal = Convert.ToInt32(sokoban_Parser.information["numOfGoals"]);
-        int countAgents = Convert.ToInt32(sokoban_Parser.information["numberOfPlayers"]);
+        actions = sokobanPlanParser.getActions();
+
+        int countbox = Convert.ToInt32(sokobanParser.information["numOfStones"]); // # of boxes / goals
+        int countwall = Convert.ToInt32(sokobanParser.information["numOfWalls"]); 
+        int countgoal = Convert.ToInt32(sokobanParser.information["numOfGoals"]);
+        int countAgents = Convert.ToInt32(sokobanParser.information["numberOfPlayers"]);
         int countFloor = char_map.GetLength(1) * char_map.GetLength(2);
         // -------Generate map by the MapGenerator class-------
         #region
@@ -131,12 +144,18 @@ public class SokobanManager : MonoBehaviour
         Deactivate(goal);
 
         // actions = parser Plan file
+        // AgentMovements(actions);
+        
 
     }
 
     // Agents moves
     void Update()
     {
+        Action action = null;
+        if (actionCounter < actions.Count){
+            action = actions[actionCounter];
+        }
         if (goals.Length != 0 && checkwin())
         {
             Deactivate(agent);
@@ -154,12 +173,18 @@ public class SokobanManager : MonoBehaviour
                 AgentMovements(false);
             }
         }
-        else
+        if(action != null)
         {
-            AgentMovements(true);
-            //AgentMovements(actions);
+            AgentMovements(action);
+            actionCounter++;
         }
-
+        // else
+        // {
+            // AgentMovements(true);
+            
+            
+        // }
+// 
     }
 
 
@@ -170,7 +195,6 @@ public class SokobanManager : MonoBehaviour
         int flagWall = 0;
         int flagAgents = 0;
         int flagFloors= 0;
-
         for (int y = 0; y < map.GetLength(0) - 1 ; y++)
         {
             for (int x = 0; x < map.GetLength(1); x++)
@@ -184,6 +208,7 @@ public class SokobanManager : MonoBehaviour
                         walls[flagWall] = g;                 
                         InitializeWall(walls[flagWall], x, y, z);
                         flagWall++;
+
                     }
                     if (isFloor(map[y, x, z]))
                     {
@@ -227,7 +252,6 @@ public class SokobanManager : MonoBehaviour
         int flagWall = 0;
         int flagAgents = 0;
         int flagFloors = 0;
-
         for (int y = 0; y < map.GetLength(0); y++)
         {
             for (int x = 0; x < map.GetLength(1); x++)
@@ -244,6 +268,7 @@ public class SokobanManager : MonoBehaviour
                     }
                     if (map[y, x, z] == 'f')
                     {
+ 
                         g = Instantiate(floor);
                         floors[flagFloors] = g;
                         InitializeFloor(floors[flagFloors], x, y, z);
@@ -282,6 +307,8 @@ public class SokobanManager : MonoBehaviour
         Deactivate(goal);
     }
 
+		private Animator anim;
+		private CharacterController controller;
 
     /**
      * This function responsible for the ai agent moves.
@@ -290,40 +317,44 @@ public class SokobanManager : MonoBehaviour
      * or the agent moves autonomously.
      * 
      */
-    //private void AgentMovements(bool isAgent)
-    //{
-    //    foreach (KeyValuePair<int, string> action in actions)
+    private void AgentMovements(Action action)
+    {
+    //    foreach (Action action in actions)
     //    {
-    //        string value = action.Value;
-    //        int index = action.Key;
+            int index = Convert.ToInt32(action.getId()) - 1;
+            string value = action.getDirection();
+            controller = GetComponent <CharacterController>();
+			anim = agents[index].GetComponentInChildren<Animator>();
+            anim.SetInteger ("AnimationPar", 1);
+           if (value.Equals("up"))
+           {
+               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
+               agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
+               //ValidifyMove(agents[index], new Vector3(-1, 0, 0));
+           }
+           if (value.Equals("right"))
+           {
+               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
+               agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
+               //ValidifyMove(agents[index], new Vector3(0, 0, 1));
+           }
+           if (value.Equals("down"))
+           {
+               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
+               agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
+               //ValidifyMove(agents[index], new Vector3(1, 0, 0));
 
-    //        if (value.Equals("U"))
-    //        {
-    //            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
-    //            agents[index].GetComponent<Transform>().position += new Vector3(-1, 0, 0);
-    //            //ValidifyMove(agents[index], new Vector3(-1, 0, 0));
-    //        }
-    //        if (value.Equals("R"))
-    //        {
-    //            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
-    //            agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
-    //            //ValidifyMove(agents[index], new Vector3(0, 0, 1));
-    //        }
-    //        if (value.Equals("D"))
-    //        {
-    //            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
-    //            agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
-    //            //ValidifyMove(agents[index], new Vector3(1, 0, 0));
-
-    //        }
-    //        if (value.Equals("L"))
-    //        {
-    //            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
-    //            agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
-    //            //ValidifyMove(agents[index], new Vector3(0, 0, -1));
-    //        }
+           }
+           if (value.Equals("left"))
+           {
+               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
+               agents[index].GetComponent<Transform>().position += new Vector3(-1, 0, 0);
+               //ValidifyMove(agents[index], new Vector3(0, 0, -1));
+           }
+            // Thread.Sleep(600);
+            // anim.SetInteger ("AnimationPar", 0);
     //    }
-    //}
+    }
 
     /*** This function check if in the agent moves he pushes box
      *
@@ -341,8 +372,7 @@ public class SokobanManager : MonoBehaviour
         }
     }
 
-		private Animator anim;
-		private CharacterController controller;
+
         		public float speed = 600.0f;
 		public float turnSpeed =600.0f;
 		private Vector3 moveDirection = Vector3.zero;
