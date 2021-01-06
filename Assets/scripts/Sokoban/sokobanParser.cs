@@ -83,9 +83,9 @@ public class sokobanParser {
             string temp2 = problemPlayer[counter].Substring(19, problemPlayer[counter].Length - 20);
             string[] playerPositions = temp2.Split('-');
 
-            // insert player position into the domain 2D array
-            domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0"+ this.playerCounter;
-            playerCounter++;
+        // insert player position into the domain 2D array
+            string heroNumber = problemPlayer[counter].Substring(12, 2);
+            domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h"+ heroNumber;
             counter++;
 
             while (problemPlayer[counter].Contains("at stone")) {
@@ -141,12 +141,10 @@ public class sokobanParser {
                     string temp = line.Substring(19, line.Length - 20);
                     string[] playerPositions = temp.Split('-');
 
-                    // insert player position into the domain 2D array
-                    if (playerCounter <10) 
-                        domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0" + playerCounter;
-                    else
-                        domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h0" + playerCounter;
-                    playerCounter++;
+                // insert player position into the domain 2D array
+                string heroNumber = line.Substring(12, 2);
+                domain[Int32.Parse(playerPositions[0]) - 1, Int32.Parse(playerPositions[1]) - 1] = "h" + heroNumber;
+
                 }
             }
         }

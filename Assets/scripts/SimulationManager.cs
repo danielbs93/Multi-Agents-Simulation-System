@@ -118,6 +118,7 @@ public class SimulationManager : MonoBehaviour
         sokobanScript.setSokobanPaths(initPath, preconditionEffectsPath, planPath);
         sokobanScript.initParser();
         sokobanScript.planParser();
+        sokobanScript.initCamerasQueue();
         sokobanScript.setmap();
     }
 

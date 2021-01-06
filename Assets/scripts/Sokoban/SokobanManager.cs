@@ -26,11 +26,26 @@ public class SokobanManager : MonoBehaviour
     public GameObject[] goals;
     public GameObject[] floors;
 
+/*
+    ===================CAMERAS=====================
+    */
+    private Queue<Camera> cameraQueue;
+    private Camera activeCameraObject;
+    private bool cameras_initiated = false;
+    //Mouse scroll wheel adjustments
+    private float minFov = 15f;
+    private float maxFov = 90f;
+    private float sensitivity = 10f;
+
     //Fields
+    
     private sokobanParser sokobanParser;// = new sokobanParser("C:\\Users\\alona\\Desktop\\Studies\\p05");
 
     private sokobanPlanParser sokobanPlanParser;
     public SimulationObject[,,] map;
+
+    private Animator anim;
+    private CharacterController controller;
 
     private bool controlEnabled = false; // Face Camera option was clicked ('c' in keyboard)
     private bool keyboardPlayer = true; // Prototype option - Agent moves currently with the 
@@ -41,9 +56,22 @@ public class SokobanManager : MonoBehaviour
     private string preEffPath;
     private string planPath;
 
+    private int frames = 0;
+    [SerializeField]
+    public int simulationSpeed = 29;
+
     int blockSize = 1;  // size of each block
 
     int actionCounter = 0;
+
+    float rotationTime = 90f;
+
+    private Dictionary<int,String> agentsLastDirections;
+
+    // public float speed = 600.0f;
+    // public float turnSpeed =600.0f;
+    // private Vector3 moveDirection = Vector3.zero;
+    // public float gravity = 20.0f;
 
     // Use this for initialization
     void Start()
@@ -131,6 +159,10 @@ public class SokobanManager : MonoBehaviour
         agents = new GameObject[countAgents];
         floors = new GameObject[countFloor];
 
+        agentsLastDirections = new Dictionary<int, string>();
+        for(int i=0; i<countAgents; i++){
+            agentsLastDirections.Add(i,"up");
+        }
         //-----Drawing map by SimulationObjects map recieved from the parser------
         DrawMap(char_map);
 
@@ -153,9 +185,6 @@ public class SokobanManager : MonoBehaviour
     void Update()
     {
         Action action = null;
-        if (actionCounter < actions.Count){
-            action = actions[actionCounter];
-        }
         if (goals.Length != 0 && checkwin())
         {
             Deactivate(agent);
@@ -170,23 +199,35 @@ public class SokobanManager : MonoBehaviour
         {
             if (!controlEnabled)
             {
-                AgentMovements(false);
+                // AgentMovements(false);
             }
         }
-        if(action != null)
+        //Switching cameras
+        if(Input.GetMouseButtonDown(1)) 
         {
-            AgentMovements(action);
-            actionCounter++;
+            switchCameras();
         }
-        // else
-        // {
-            // AgentMovements(true);
-            
-            
-        // }
-// 
-    }
 
+        //Mouse Scroll Wheel zoom-in and zoom-out
+        float fov = activeCameraObject.fieldOfView;
+        fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+        fov = Mathf.Clamp(fov, minFov, maxFov);
+        activeCameraObject.fieldOfView = fov;
+
+        frames++;
+        if (frames%simulationSpeed == 0){
+            if (actionCounter < actions.Count){
+                action = actions[actionCounter];
+            }
+            if(action != null)
+            {
+                AgentMovements(action);
+                actionCounter++;
+                // anim.SetInteger ("AnimationPar", 0);
+            }
+            frames = 0;
+        }
+    }
 
     private void DrawMap(SimulationObject[,,] map)
     {
@@ -234,8 +275,8 @@ public class SokobanManager : MonoBehaviour
                     if (isAgent(map[y, x, z]))
                     {
                         g = Instantiate(agent);
-                        agents[flagAgents] = g;
-                        InitializeWorker(agents[flagAgents], x, y, z);
+                        agents[Convert.ToInt32(map[y, x, z].getID())] = g;
+                        InitializeWorker(agents[Convert.ToInt32(map[y, x, z].getID())], x, y, z);
                         flagAgents++;
                     }
                     if (g != null)
@@ -245,70 +286,6 @@ public class SokobanManager : MonoBehaviour
         }
     }
 
-    private void DrawCharMap(char[,,] map)
-    {
-        int flagBoxes = 0;
-        int flagGoals = 0;
-        int flagWall = 0;
-        int flagAgents = 0;
-        int flagFloors = 0;
-        for (int y = 0; y < map.GetLength(0); y++)
-        {
-            for (int x = 0; x < map.GetLength(1); x++)
-            {
-                for (int z = 0; z < map.GetLength(2); z++)
-                {
-                    GameObject g = null;
-                    if (map[y, x, z] == 'w')
-                    {
-                        g = Instantiate(wall);
-                        walls[flagWall] = g;
-                        InitializeWall(walls[flagWall], x, y, z);
-                        flagWall++;
-                    }
-                    if (map[y, x, z] == 'f')
-                    {
- 
-                        g = Instantiate(floor);
-                        floors[flagFloors] = g;
-                        InitializeFloor(floors[flagFloors], x, y, z);
-                        flagFloors++;
-                    }
-                    if (map[y, x, z] == 'b')
-                    {
-                        g = Instantiate(box);
-                        boxes[flagBoxes] = g;
-                        InitializeCube(boxes[flagBoxes], x, y, z);
-                        flagBoxes++;
-                    }
-                    if (map[y, x, z] == 'g')
-                    {
-                        g = Instantiate(goal);
-                        goals[flagGoals] = g;
-                        InitializeCube(goals[flagGoals], x, y, z);
-                        flagGoals++;
-                    }
-                    if (map[y, x, z] == 'h')
-                    {
-                        g = Instantiate(agent);
-                        agents[flagAgents] = g;
-                        InitializeWorker(agents[flagAgents], x, y, z);
-                        flagAgents++;
-                    }
-                    if (g != null)
-                        g.transform.parent = maphold.transform;
-                }
-            }
-        }
-        Deactivate(box);
-        Deactivate(wall);
-        Deactivate(floor);
-        //Deactivate(worker);
-        Deactivate(goal);
-    }
-
-		private Animator anim;
-		private CharacterController controller;
 
     /**
      * This function responsible for the ai agent moves.
@@ -321,36 +298,43 @@ public class SokobanManager : MonoBehaviour
     {
     //    foreach (Action action in actions)
     //    {
-            int index = Convert.ToInt32(action.getId()) - 1;
+            int index = Convert.ToInt32(action.getId());
+            print(index);
             string value = action.getDirection();
             controller = GetComponent <CharacterController>();
-			anim = agents[index].GetComponentInChildren<Animator>();
+            anim = gameObject.GetComponentInChildren<Animator>();
             anim.SetInteger ("AnimationPar", 1);
+
            if (value.Equals("up"))
            {
-               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
-               agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
-               //ValidifyMove(agents[index], new Vector3(-1, 0, 0));
+                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
+                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                     ,Quaternion.LookRotation(new Vector3(0, 0, 1)), Time.deltaTime*rotationTime);
+                agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
            }
            if (value.Equals("right"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
+                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                     ,Quaternion.LookRotation(new Vector3(1, 0, 0)), Time.deltaTime*rotationTime);
                agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
-               //ValidifyMove(agents[index], new Vector3(0, 0, 1));
            }
            if (value.Equals("down"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
+                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                     ,Quaternion.LookRotation(new Vector3(0, 0, -1)), Time.deltaTime*rotationTime);
                agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
-               //ValidifyMove(agents[index], new Vector3(1, 0, 0));
 
            }
            if (value.Equals("left"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
+            agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                     ,Quaternion.LookRotation(new Vector3(-1, 0, 0)), Time.deltaTime*rotationTime);
                agents[index].GetComponent<Transform>().position += new Vector3(-1, 0, 0);
-               //ValidifyMove(agents[index], new Vector3(0, 0, -1));
            }
+            
             // Thread.Sleep(600);
             // anim.SetInteger ("AnimationPar", 0);
     //    }
@@ -372,109 +356,38 @@ public class SokobanManager : MonoBehaviour
         }
     }
 
+    // private float setAgentsRotation(int agentIndex, String direction){
+    //     String lastDir = agentsLastDirections[agentIndex];
+    //     if(lastDir.Equals("up")){
 
-        		public float speed = 600.0f;
-		public float turnSpeed =600.0f;
-		private Vector3 moveDirection = Vector3.zero;
-		public float gravity = 20.0f;
+    //     }
+        
+    // }
 
-    // old function
-    private void AgentMovements(bool isAgent)
-    {
-
-            int i = 0;
-            controller = GetComponent <CharacterController>();
-			anim = gameObject.GetComponentInChildren<Animator>();
-        // anim.SetInteger ("AnimationPar", 0);
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            anim.SetInteger ("AnimationPar", 1);
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(-1, 0, 0) == tbox.GetComponent<Transform>().position)
-                {
-                    ValidifyMove(tbox, new Vector3(-1, 0, 0));
-                }
-            }
-
-            // Vector3 newPos = anim.bodyPosition +  new Vector3(-1, 0, 0);
-            anim.transform.Rotate(anim.transform.right);
-            // anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
-            // anim.transform.Rotate(anim.bodyPosition);
-            // controller.Move(moveDirection * Time.deltaTime);
-            // moveDirection.y -= gravity * Time.deltaTime;
-            ValidifyMove(agents[i], new Vector3(-1, 0, 0));
-
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            anim.SetInteger ("AnimationPar", 1);
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(1, 0, 0) == tbox.GetComponent<Transform>().position)
-                    ValidifyMove(tbox, new Vector3(1, 0, 0));
-            }
-            // anim.transform.Rotate(-anim.transform.forward);
-
-            ValidifyMove(agents[i], new Vector3(1, 0, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            anim.SetInteger ("AnimationPar", 1);
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(0, 0, -1) == tbox.GetComponent<Transform>().position)
-                    ValidifyMove(tbox, new Vector3(0, 0, -1));
-            }
-            // anim.transform.Rotate(-anim.transform.right);
-
-            ValidifyMove(agents[i], new Vector3(0, 0, -1));
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            anim.SetInteger ("AnimationPar", 1);
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(0, 0, 1) == tbox.GetComponent<Transform>().position)
-                    ValidifyMove(tbox, new Vector3(0, 0, 1));
-            }
-            // anim.transform.Rotate(anim.transform.right);
-
-            ValidifyMove(agents[i], new Vector3(0, 0, 1));
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(0, 1, 0) == tbox.GetComponent<Transform>().position)
-                    ValidifyMove(tbox, new Vector3(0, 1, 0));
-            }
-            ValidifyMove(agents[i], new Vector3(0, 1, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            foreach (GameObject tbox in boxes)
-            {
-                if (agents[i].GetComponent<Transform>().position + new Vector3(0, -1, 0) == tbox.GetComponent<Transform>().position)
-                    ValidifyMove(tbox, new Vector3(0, -1, 0));
-            }
-            ValidifyMove(agents[i], new Vector3(0, -1, 0));
-        }
-        // float turn = Input.GetAxis("Horizontal");
-        // anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
-        // controller.Move(moveDirection * Time.deltaTime);
-        // moveDirection.y -= gravity * Time.deltaTime;
-
-    }
 
     /*
      * This function checks if all boxes are in their goal positions
      */
-    bool checkwin()
+    // bool checkwin()
+    // {
+    //     int goalflags = 0;
+    //     float y_goal_box = 0.5f;
+    //     foreach (GameObject tgoal in goals)
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             // Since the goal is ObjectGame at position (0,0.5,0) we check the addition of goal position to the box position
+    //             if ((tgoal.GetComponent<Transform>().position + new Vector3(0, y_goal_box, 0)).Equals(tbox.GetComponent<Transform>().position))
+    //                 goalflags++;
+    //         }
+    //     if (goals.Length == goalflags)
+    //         return true;
+    //     return false;
+    // }
+     bool checkwin()
     {
         int goalflags = 0;
-        float y_goal_box = 0.5f;
+        // float y_goal_box = 0.5f;
+        /*
         foreach (GameObject tgoal in goals)
             foreach (GameObject tbox in boxes)
             {
@@ -482,8 +395,11 @@ public class SokobanManager : MonoBehaviour
                 if ((tgoal.GetComponent<Transform>().position + new Vector3(0, y_goal_box, 0)).Equals(tbox.GetComponent<Transform>().position))
                     goalflags++;
             }
+        
+        */
         if (goals.Length == goalflags)
             return true;
+            
         return false;
     }
 
@@ -640,5 +556,189 @@ public class SokobanManager : MonoBehaviour
         }
         return false;
     }
+
+    public void initCamerasQueue()
+    {
+        if (!cameras_initiated)
+        {
+            cameraQueue = new Queue<Camera>();
+
+            activeCameraObject = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
+            GameObject[] sideCameras = GameObject.FindGameObjectsWithTag("SideCamera");
+
+            foreach (GameObject g_camera in sideCameras)
+            {
+                Camera camera = g_camera.GetComponent<Camera>();
+                camera.gameObject.SetActive(false);
+                cameraQueue.Enqueue(camera);
+            }
+
+            cameras_initiated = true;
+        }
+
+    }
+
+    public void switchCameras()
+    {
+        Camera tempCamera = activeCameraObject;
+        activeCameraObject.gameObject.SetActive(false);
+        activeCameraObject = cameraQueue.Dequeue();
+        activeCameraObject.gameObject.SetActive(true);
+        cameraQueue.Enqueue(tempCamera);
+    }
+
+
+    
+    // private void DrawCharMap(char[,,] map)
+    // {
+    //     int flagBoxes = 0;
+    //     int flagGoals = 0;
+    //     int flagWall = 0;
+    //     int flagAgents = 0;
+    //     int flagFloors = 0;
+    //     for (int y = 0; y < map.GetLength(0); y++)
+    //     {
+    //         for (int x = 0; x < map.GetLength(1); x++)
+    //         {
+    //             for (int z = 0; z < map.GetLength(2); z++)
+    //             {
+    //                 GameObject g = null;
+    //                 if (map[y, x, z] == 'w')
+    //                 {
+    //                     g = Instantiate(wall);
+    //                     walls[flagWall] = g;
+    //                     InitializeWall(walls[flagWall], x, y, z);
+    //                     flagWall++;
+    //                 }
+    //                 if (map[y, x, z] == 'f')
+    //                 {
+ 
+    //                     g = Instantiate(floor);
+    //                     floors[flagFloors] = g;
+    //                     InitializeFloor(floors[flagFloors], x, y, z);
+    //                     flagFloors++;
+    //                 }
+    //                 if (map[y, x, z] == 'b')
+    //                 {
+    //                     g = Instantiate(box);
+    //                     boxes[flagBoxes] = g;
+    //                     InitializeCube(boxes[flagBoxes], x, y, z);
+    //                     flagBoxes++;
+    //                 }
+    //                 if (map[y, x, z] == 'g')
+    //                 {
+    //                     g = Instantiate(goal);
+    //                     goals[flagGoals] = g;
+    //                     InitializeCube(goals[flagGoals], x, y, z);
+    //                     flagGoals++;
+    //                 }
+    //                 if (map[y, x, z] == 'h')
+    //                 {
+    //                     g = Instantiate(agent);
+    //                     agents[flagAgents] = g;
+    //                     InitializeWorker(agents[flagAgents], x, y, z);
+    //                     flagAgents++;
+    //                 }
+    //                 if (g != null)
+    //                     g.transform.parent = maphold.transform;
+    //             }
+    //         }
+    //     }
+    //     Deactivate(box);
+    //     Deactivate(wall);
+    //     Deactivate(floor);
+    //     //Deactivate(worker);
+    //     Deactivate(goal);
+    // }
+
+    
+    // private void AgentMovements(bool isAgent)
+    // {
+
+    //         int i = 0;
+    //         controller = GetComponent <CharacterController>();
+	// 		anim = gameObject.GetComponentInChildren<Animator>();
+    //     // anim.SetInteger ("AnimationPar", 0);
+
+    //     if (Input.GetKeyDown(KeyCode.W))
+    //     {
+    //         anim.SetInteger ("AnimationPar", 1);
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(-1, 0, 0) == tbox.GetComponent<Transform>().position)
+    //             {
+    //                 ValidifyMove(tbox, new Vector3(-1, 0, 0));
+    //             }
+    //         }
+
+    //         // Vector3 newPos = anim.bodyPosition +  new Vector3(-1, 0, 0);
+    //         anim.transform.Rotate(anim.transform.right);
+    //         // anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
+    //         // anim.transform.Rotate(anim.bodyPosition);
+    //         // controller.Move(moveDirection * Time.deltaTime);
+    //         // moveDirection.y -= gravity * Time.deltaTime;
+    //         ValidifyMove(agents[i], new Vector3(-1, 0, 0));
+
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.S))
+    //     {
+    //         anim.SetInteger ("AnimationPar", 1);
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(1, 0, 0) == tbox.GetComponent<Transform>().position)
+    //                 ValidifyMove(tbox, new Vector3(1, 0, 0));
+    //         }
+    //         // anim.transform.Rotate(-anim.transform.forward);
+
+    //         ValidifyMove(agents[i], new Vector3(1, 0, 0));
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         anim.SetInteger ("AnimationPar", 1);
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(0, 0, -1) == tbox.GetComponent<Transform>().position)
+    //                 ValidifyMove(tbox, new Vector3(0, 0, -1));
+    //         }
+    //         // anim.transform.Rotate(-anim.transform.right);
+
+    //         ValidifyMove(agents[i], new Vector3(0, 0, -1));
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.D))
+    //     {
+    //         anim.SetInteger ("AnimationPar", 1);
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(0, 0, 1) == tbox.GetComponent<Transform>().position)
+    //                 ValidifyMove(tbox, new Vector3(0, 0, 1));
+    //         }
+    //         // anim.transform.Rotate(anim.transform.right);
+
+    //         ValidifyMove(agents[i], new Vector3(0, 0, 1));
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.Q))
+    //     {
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(0, 1, 0) == tbox.GetComponent<Transform>().position)
+    //                 ValidifyMove(tbox, new Vector3(0, 1, 0));
+    //         }
+    //         ValidifyMove(agents[i], new Vector3(0, 1, 0));
+    //     }
+    //     if (Input.GetKeyDown(KeyCode.E))
+    //     {
+    //         foreach (GameObject tbox in boxes)
+    //         {
+    //             if (agents[i].GetComponent<Transform>().position + new Vector3(0, -1, 0) == tbox.GetComponent<Transform>().position)
+    //                 ValidifyMove(tbox, new Vector3(0, -1, 0));
+    //         }
+    //         ValidifyMove(agents[i], new Vector3(0, -1, 0));
+    //     }
+    //     // float turn = Input.GetAxis("Horizontal");
+    //     // anim.transform.Rotate(0, 90 * turnSpeed * Time.deltaTime, 0);
+    //     // controller.Move(moveDirection * Time.deltaTime);
+    //     // moveDirection.y -= gravity * Time.deltaTime;
+
+    // }
 
 }

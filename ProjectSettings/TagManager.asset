@@ -11,6 +11,8 @@ TagManager:
   - preEffPH
   - planPH
   - runSim
+  - SideCamera
+  - CameraList
   layers:
   - Default
   - TransparentFX

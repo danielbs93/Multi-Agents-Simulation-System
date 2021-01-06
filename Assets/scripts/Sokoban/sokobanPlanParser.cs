@@ -22,7 +22,7 @@ public class sokobanPlanParser {
                     description = line.Substring(5, line.Length - 6);
                 else
                     description = line.Substring(6, line.Length - 7);
-                linesCounter++;
+                
 
                 string[] splittedLine = description.Split(' ');
                 string agentId="";
@@ -34,8 +34,9 @@ public class sokobanPlanParser {
                         direction = word.Substring(4);
                 }
                 Action action = new Action(agentId, description, direction);
-                // actions.Insert(linesCounter,action);
-                actions.Add(action);
+                actions.Insert(linesCounter,action);
+                // actions.Add(action);
+                linesCounter++;
             }
         }
     }
