@@ -216,7 +216,7 @@ public class sokobanParser {
         {
             for (int j = 0; j < this.getColumns(); j++) {
                 if (this.getCharAt(i, j).StartsWith("h") || this.getCharAt(i, j).StartsWith("b")) {
-                    domain[1, i + 1, j + 1] = new SimulationObject(this.getCharAt(i, j).Substring(0,1), Convert.ToInt32(this.getCharAt(i, j).Substring(1, 1)));
+                    domain[1, i + 1, j + 1] = new SimulationObject(this.getCharAt(i, j).Substring(0,1), Convert.ToInt32(this.getCharAt(i, j).Substring(1, 2)));
                 }
                 else
                 {

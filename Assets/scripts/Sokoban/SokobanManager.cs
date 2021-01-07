@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System.Threading;
+using UnityEngine.UIElements;
 
 public class SokobanManager : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class SokobanManager : MonoBehaviour
     private sokobanPlanParser sokobanPlanParser;
     public SimulationObject[,,] map;
 
-    private Animator anim;
+    // private Animator anim;
     private CharacterController controller;
 
     private bool controlEnabled = false; // Face Camera option was clicked ('c' in keyboard)
@@ -53,12 +54,12 @@ public class SokobanManager : MonoBehaviour
     private List<Action> actions; // List of agents actions from the plan file 
 
     private string initPath;
-    private string preEffPath;
+    // private string preEffPath;
     private string planPath;
 
     private int frames = 0;
     [SerializeField]
-    public int simulationSpeed = 29;
+    public float simulationSpeed = 30;
 
     int blockSize = 1;  // size of each block
 
@@ -66,6 +67,7 @@ public class SokobanManager : MonoBehaviour
 
     float rotationTime = 90f;
 
+    private Slider slider;
     private Dictionary<int,String> agentsLastDirections;
 
     // public float speed = 600.0f;
@@ -79,16 +81,16 @@ public class SokobanManager : MonoBehaviour
 
     }
 
-    public void setSokobanPaths(string init, string preEff, string plan)
+    public void setSokobanPaths(string init, string plan)
     {
         initPath = init;
-        preEffPath = preEff;
+        // preEffPath = preEff;
         planPath = plan;
     }
 
     public void initParser()
     {
-        sokobanParser = new sokobanParser(Path.GetDirectoryName(initPath));
+        sokobanParser = new sokobanParser(initPath);
     }
 
     public void planParser()
@@ -101,7 +103,8 @@ public class SokobanManager : MonoBehaviour
     public void setmap()
     {
         maphold.SetActive(true);
-
+        // slider = GameObject.FindWithTag("Slider").GetComponent<Slider>();
+        
         //------GenerateMap - 3D by the parser with SimulationObject-------
         //map = sokoban_Parser.generateMap();
 
@@ -275,8 +278,11 @@ public class SokobanManager : MonoBehaviour
                     if (isAgent(map[y, x, z]))
                     {
                         g = Instantiate(agent);
-                        agents[Convert.ToInt32(map[y, x, z].getID())] = g;
-                        InitializeWorker(agents[Convert.ToInt32(map[y, x, z].getID())], x, y, z);
+                        print(Convert.ToInt32(map[y, x, z].getID()));
+                        print(map[y, x, z].getID());
+                        print("------------------");
+                        agents[Convert.ToInt32(map[y, x, z].getID())-1] = g;
+                        InitializeWorker(agents[Convert.ToInt32(map[y, x, z].getID())-1], x, y, z);
                         flagAgents++;
                     }
                     if (g != null)
@@ -298,28 +304,28 @@ public class SokobanManager : MonoBehaviour
     {
     //    foreach (Action action in actions)
     //    {
-            int index = Convert.ToInt32(action.getId());
+            int index = Convert.ToInt32(action.getId())-1;
             print(index);
             string value = action.getDirection();
             controller = GetComponent <CharacterController>();
-            anim = gameObject.GetComponentInChildren<Animator>();
+            Animator anim = gameObject.GetComponentInChildren<Animator>();
             anim.SetInteger ("AnimationPar", 1);
 
-           if (value.Equals("up"))
+           if (value.Equals("right"))
            {
                 CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
                 agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
                                                      ,Quaternion.LookRotation(new Vector3(0, 0, 1)), Time.deltaTime*rotationTime);
                 agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
            }
-           if (value.Equals("right"))
+           if (value.Equals("down"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
                 agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
                                                      ,Quaternion.LookRotation(new Vector3(1, 0, 0)), Time.deltaTime*rotationTime);
                agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
            }
-           if (value.Equals("down"))
+           if (value.Equals("left"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
                 agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
@@ -327,7 +333,7 @@ public class SokobanManager : MonoBehaviour
                agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
 
            }
-           if (value.Equals("left"))
+           if (value.Equals("up"))
            {
                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
             agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
@@ -355,6 +361,12 @@ public class SokobanManager : MonoBehaviour
             }
         }
     }
+
+    // public void adjustSpeed() {
+    //     float newSpeed = slider.value;
+    //     print(newSpeed);
+    //     this.simulationSpeed = newSpeed;
+    // }
 
     // private float setAgentsRotation(int agentIndex, String direction){
     //     String lastDir = agentsLastDirections[agentIndex];
@@ -448,19 +460,31 @@ public class SokobanManager : MonoBehaviour
             o.SetActive(false);
     }
 
+    private void DestroyObjects(GameObject[] arr)
+    {
+        foreach (GameObject o in arr)
+            Destroy(o);
+    }
+
     public void deleteMap()
     {
-        Deactivate(walls);
+        //Deactivate(walls);
         Deactivate(wall);
-        Deactivate(floors);
+        //Deactivate(floors);
         Deactivate(floor);
-        Deactivate(goals);
+        //Deactivate(goals);
         Deactivate(goal);
-        Deactivate(agents);
+        //Deactivate(agents);
         Deactivate(agent);
-        Deactivate(boxes);
+        //Deactivate(boxes);
         Deactivate(box);
+        DestroyObjects(walls);
+        DestroyObjects(floors);
+        DestroyObjects(agents);
+        DestroyObjects(boxes);
+
     }
+
 
     /*
      * Validating Agent movements:
@@ -584,6 +608,8 @@ public class SokobanManager : MonoBehaviour
         activeCameraObject.gameObject.SetActive(false);
         activeCameraObject = cameraQueue.Dequeue();
         activeCameraObject.gameObject.SetActive(true);
+        Canvas spaceCanvas = GameObject.FindGameObjectWithTag("SpaceCanvas").GetComponent<Canvas>() as Canvas;
+        spaceCanvas.worldCamera = activeCameraObject;
         cameraQueue.Enqueue(tempCamera);
     }
 

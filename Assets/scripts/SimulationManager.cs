@@ -12,6 +12,8 @@ public class SimulationManager : MonoBehaviour
     public Canvas endingScreen;
     public Canvas menu;
     public Canvas menuOptions;
+    private Canvas messageDialog;
+
 
     public GameObject sokobanManager;
     private SokobanManager sokobanScript;
@@ -20,16 +22,16 @@ public class SimulationManager : MonoBehaviour
     private int domain; // 0 - means Sokoban, 1 - means EMSS
 
     private Button init_btn;
-    private Button preconditions_effects_btn;
+    // private Button preconditions_effects_btn;
     private Button plan_btn;
     private Button run_sim_btn;
 
     private InputField init_ph;
-    private InputField preconditions_effects_ph;
+    // private InputField preconditions_effects_ph;
     private InputField  plan_ph;
 
     private string initPath;
-    private string preconditionEffectsPath;
+    // private string preconditionEffectsPath;
     private string planPath;
 
 
@@ -41,6 +43,10 @@ public class SimulationManager : MonoBehaviour
         endingScreen.gameObject.SetActive(false);
         domainScreen.gameObject.SetActive(true);
         menu.gameObject.SetActive(false);
+
+        messageDialog = GameObject.FindGameObjectWithTag("MessageDialog").GetComponent<Canvas>();
+        messageDialog.gameObject.SetActive(false);
+
 
         //Domains managers 
         sokobanManager.gameObject.SetActive(false);
@@ -65,12 +71,12 @@ public class SimulationManager : MonoBehaviour
     private void activateLoadScreenComponents()
     {
         init_btn = GameObject.FindGameObjectWithTag("initBrowse").GetComponent<Button>();
-        preconditions_effects_btn = GameObject.FindGameObjectWithTag("precEffBrowse").GetComponent<Button>();
+        // preconditions_effects_btn = GameObject.FindGameObjectWithTag("precEffBrowse").GetComponent<Button>();
         plan_btn = GameObject.FindGameObjectWithTag("planBrowse").GetComponent<Button>();
         run_sim_btn = GameObject.FindGameObjectWithTag("runSim").GetComponent<Button>();
 
         init_ph = GameObject.FindGameObjectWithTag("initPH").GetComponent<InputField>();
-        preconditions_effects_ph = GameObject.FindGameObjectWithTag("preEffPH").GetComponent<InputField>();
+        // preconditions_effects_ph = GameObject.FindGameObjectWithTag("preEffPH").GetComponent<InputField>();
         plan_ph = GameObject.FindGameObjectWithTag("planPH").GetComponent<InputField>();
     }
 
@@ -79,13 +85,13 @@ public class SimulationManager : MonoBehaviour
         switch (whichPath)
         {
             case "init":
-                initPath = EditorUtility.OpenFilePanel("Initial file", "", "");
+                initPath = EditorUtility.OpenFolderPanel("Initial file", "", "");
                 init_ph.text = initPath;
                 break;
-            case "pre":
-                preconditionEffectsPath = EditorUtility.OpenFilePanel("Precondition & Effects file", "", "");
-                preconditions_effects_ph.text = preconditionEffectsPath;
-                break;
+            // case "pre":
+            //     preconditionEffectsPath = EditorUtility.OpenFilePanel("Precondition & Effects file", "", "");
+            //     preconditions_effects_ph.text = preconditionEffectsPath;
+            //     break;
             case "plan":
                 planPath = EditorUtility.OpenFilePanel("Plan file", "", "");
                 plan_ph.text = planPath;
@@ -95,19 +101,45 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
-    public void runSimulationByDomain()
+public void runSimulationByDomain()
     {
-        menu.gameObject.SetActive(true);
-        menuOptions.gameObject.SetActive(false);
-        if (domain == 0)
+        if (validateInputeFields())
         {
-            runSokobanSimulation();
-        }
-        else
-        {
-            runEMSSsimulation();
+            menu.gameObject.SetActive(true);
+            menuOptions.gameObject.SetActive(false);
+            if (domain == 0)
+            {
+                runSokobanSimulation();
+            }
+            else
+            {
+                runEMSSsimulation();
+            }
         }
     }
+
+    /*
+        
+        If one of the paths is not initalized in the load screen then display error message dialog
+
+         */
+    private bool validateInputeFields()
+    {
+        if (initPath == null || planPath == null)
+        {
+            messageDialog.gameObject.SetActive(true);
+            return false;
+        }
+        return true;
+    }
+
+    //Button for closing the error message dialog
+    public void realeseMessageDialog()
+    {
+        messageDialog.gameObject.SetActive(false);
+    }
+
+
 
     // Responsibility transformation by the assigned Sokoban domain
     private void runSokobanSimulation()
@@ -115,7 +147,7 @@ public class SimulationManager : MonoBehaviour
         loadScreen.gameObject.SetActive(false);
         sokobanManager.gameObject.SetActive(true);
         sokobanScript = (SokobanManager)sokobanManager.GetComponent(typeof(SokobanManager));
-        sokobanScript.setSokobanPaths(initPath, preconditionEffectsPath, planPath);
+        sokobanScript.setSokobanPaths(initPath, planPath);
         sokobanScript.initParser();
         sokobanScript.planParser();
         sokobanScript.initCamerasQueue();
