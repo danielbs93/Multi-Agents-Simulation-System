@@ -13,6 +13,18 @@ TagManager:
   - runSim
   - SideCamera
   - CameraList
+  - SpaceCanvas
+  - MessageDialog
+  - Slider
+  - playSimBtn
+  - stpByStpBtn
+  - SideCameraRight
+  - SideCameraLeft
+  - CapacityText
+  - CostText
+  - ReachableFloorsText
+  - RightFloorNumber
+  - LeftFloorNumber
   layers:
   - Default
   - TransparentFX

@@ -159,7 +159,7 @@ public class sokobanParser {
                     }
                 }
             }
-        information.Add("numOfWalls", wallsCounter + (4+2*domain.GetLength(0)+2* domain.GetLength(1)));
+        information.Add("numOfWalls", wallsCounter + 2*(4+2*domain.GetLength(0)+2* domain.GetLength(1)));
         }
 
         private void clearEmptySpaces() {
@@ -206,8 +206,14 @@ public class sokobanParser {
             for (int j = 0; j < domain.GetLength(2); j++)
             {
                 // Simulation Object Initiate - inserting wall as name
-
-                domain[0, i, j] = new SimulationObject("f",0); // assign the simulation objects
+                if (i == 0 || j == 0 || i == domain.GetLength(1) - 1 || j == domain.GetLength(2) - 1)
+                {
+                    domain[0, i, j] = new SimulationObject("w", 0); // assign the simulation objects
+                }
+                else
+                {
+                    domain[0, i, j] = new SimulationObject("f",0); // assign the simulation objects
+                }
             }
         }
 

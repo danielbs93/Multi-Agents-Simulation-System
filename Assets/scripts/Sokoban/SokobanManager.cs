@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using System.Threading;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SokobanManager : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class SokobanManager : MonoBehaviour
     private sokobanPlanParser sokobanPlanParser;
     public SimulationObject[,,] map;
 
+    // Step by Step mode or continuus running
+    private bool gameHold = false;
+    private bool stepFlag = false;
+
     // private Animator anim;
     private CharacterController controller;
 
@@ -67,7 +72,7 @@ public class SokobanManager : MonoBehaviour
 
     float rotationTime = 90f;
 
-    private Slider slider;
+    private UnityEngine.UI.Slider slider;
     private Dictionary<int,String> agentsLastDirections;
 
     // public float speed = 600.0f;
@@ -217,16 +222,26 @@ public class SokobanManager : MonoBehaviour
         fov = Mathf.Clamp(fov, minFov, maxFov);
         activeCameraObject.fieldOfView = fov;
 
+        // Since Update function occures every 1 frame we had to control the simulation speed by 'frame' variable
         frames++;
         if (frames%simulationSpeed == 0){
+
+            // Iterating over the agents actions
             if (actionCounter < actions.Count){
                 action = actions[actionCounter];
             }
             if(action != null)
             {
-                AgentMovements(action);
-                actionCounter++;
-                // anim.SetInteger ("AnimationPar", 0);
+                if (gameHold == stepFlag)
+                {
+                    AgentMovements(action);
+                    actionCounter++;
+                    // anim.SetInteger ("AnimationPar", 0);
+                    if (gameHold && stepFlag)
+                    {
+                        stepFlag = !stepFlag;
+                    }
+                }
             }
             frames = 0;
         }
@@ -308,8 +323,8 @@ public class SokobanManager : MonoBehaviour
             print(index);
             string value = action.getDirection();
             controller = GetComponent <CharacterController>();
-            Animator anim = gameObject.GetComponentInChildren<Animator>();
-            anim.SetInteger ("AnimationPar", 1);
+            Animator[] anim = gameObject.GetComponentsInChildren<Animator>();
+            anim[index].SetInteger ("AnimationPar", 1);
 
            if (value.Equals("right"))
            {
@@ -342,7 +357,7 @@ public class SokobanManager : MonoBehaviour
            }
             
             // Thread.Sleep(600);
-            // anim.SetInteger ("AnimationPar", 0);
+            //anim[index].SetInteger ("AnimationPar", 0);
     //    }
     }
 
@@ -613,8 +628,43 @@ public class SokobanManager : MonoBehaviour
         cameraQueue.Enqueue(tempCamera);
     }
 
+    /*
+     Simulation tranformation to continuus running
+     */
+    public void playSimMode()
+    {
+        gameHold = false;
+        stepFlag = false;
+    }
 
-    
+    /*
+     Simulation transformation to step-by-step mode by demand
+     */
+    public void stepByStepMode()
+    {
+        gameHold = true;
+        stepFlag = true;
+    }
+
+    public void initActionCounter()
+    {
+        actionCounter = 0;
+    }
+
+    public void initAgentsActions()
+    {
+        agentsLastDirections.Clear();
+    }
+
+    public void speedUp()    {
+        if (simulationSpeed - 4 > 0)        {            simulationSpeed = simulationSpeed - 4;        }    }
+
+    public void speedDown()    {        if (simulationSpeed + 4 < 100)        {            simulationSpeed = simulationSpeed + 4;        }    }
+
+
+
+
+
     // private void DrawCharMap(char[,,] map)
     // {
     //     int flagBoxes = 0;
@@ -638,7 +688,7 @@ public class SokobanManager : MonoBehaviour
     //                 }
     //                 if (map[y, x, z] == 'f')
     //                 {
- 
+
     //                     g = Instantiate(floor);
     //                     floors[flagFloors] = g;
     //                     InitializeFloor(floors[flagFloors], x, y, z);
@@ -677,13 +727,13 @@ public class SokobanManager : MonoBehaviour
     //     Deactivate(goal);
     // }
 
-    
+
     // private void AgentMovements(bool isAgent)
     // {
 
     //         int i = 0;
     //         controller = GetComponent <CharacterController>();
-	// 		anim = gameObject.GetComponentInChildren<Animator>();
+    // 		anim = gameObject.GetComponentInChildren<Animator>();
     //     // anim.SetInteger ("AnimationPar", 0);
 
     //     if (Input.GetKeyDown(KeyCode.W))

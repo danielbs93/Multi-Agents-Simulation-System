@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
     //Private Fields
     public Canvas loadScreen;
-    public Canvas domainScreen;
     public Canvas endingScreen;
     public Canvas menu;
     public Canvas menuOptions;
     private Canvas messageDialog;
 
 
-    public GameObject sokobanManager;
+    public GameObject domainManager;
     private SokobanManager sokobanScript;
+    private EMSSManager emssScript;
     //TODO-EMSS fields
 
     private int domain; // 0 - means Sokoban, 1 - means EMSS
@@ -39,17 +40,19 @@ public class SimulationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print("here");
         loadScreen.gameObject.SetActive(false);
         endingScreen.gameObject.SetActive(false);
-        domainScreen.gameObject.SetActive(true);
         menu.gameObject.SetActive(false);
 
         messageDialog = GameObject.FindGameObjectWithTag("MessageDialog").GetComponent<Canvas>();
         messageDialog.gameObject.SetActive(false);
 
+        getDomainChoice(SceneSimManager.domain);
+
 
         //Domains managers 
-        sokobanManager.gameObject.SetActive(false);
+        domainManager.gameObject.SetActive(false);
         //TODO-EMSS manager false activation
 
     }
@@ -63,21 +66,20 @@ public class SimulationManager : MonoBehaviour
     public void getDomainChoice(int i)
     {
         domain = i;
-        domainScreen.gameObject.SetActive(false);
         loadScreen.gameObject.SetActive(true);
         activateLoadScreenComponents();
     }
 
     private void activateLoadScreenComponents()
     {
+        // Loading Screen Properties
         init_btn = GameObject.FindGameObjectWithTag("initBrowse").GetComponent<Button>();
-        // preconditions_effects_btn = GameObject.FindGameObjectWithTag("precEffBrowse").GetComponent<Button>();
         plan_btn = GameObject.FindGameObjectWithTag("planBrowse").GetComponent<Button>();
         run_sim_btn = GameObject.FindGameObjectWithTag("runSim").GetComponent<Button>();
 
         init_ph = GameObject.FindGameObjectWithTag("initPH").GetComponent<InputField>();
-        // preconditions_effects_ph = GameObject.FindGameObjectWithTag("preEffPH").GetComponent<InputField>();
         plan_ph = GameObject.FindGameObjectWithTag("planPH").GetComponent<InputField>();
+
     }
 
     public void openFileExplorer(string whichPath)
@@ -103,6 +105,10 @@ public class SimulationManager : MonoBehaviour
 
 public void runSimulationByDomain()
     {
+        //TEST ONLY ERASE AFTER THAT
+        //initPath = "C:\\Users\\USER\\Desktop\\New folder\\Examples\\p04";
+        //planPath = "C:\\Users\\USER\\Desktop\\New folder\\Examples\\p04\\problem-slow0-0.pddl";
+        domain = 1;
         if (validateInputeFields())
         {
             menu.gameObject.SetActive(true);
@@ -145,8 +151,8 @@ public void runSimulationByDomain()
     private void runSokobanSimulation()
     {
         loadScreen.gameObject.SetActive(false);
-        sokobanManager.gameObject.SetActive(true);
-        sokobanScript = (SokobanManager)sokobanManager.GetComponent(typeof(SokobanManager));
+        domainManager.gameObject.SetActive(true);
+        sokobanScript = (SokobanManager)domainManager.GetComponent(typeof(SokobanManager));
         sokobanScript.setSokobanPaths(initPath, planPath);
         sokobanScript.initParser();
         sokobanScript.planParser();
@@ -157,13 +163,27 @@ public void runSimulationByDomain()
     // Responsibility transformation by the assigned EMSS domain
     public void runEMSSsimulation()
     {
-        //TODO
+        loadScreen.gameObject.SetActive(false);
+        domainManager.gameObject.SetActive(true);
+        emssScript = (EMSSManager)domainManager.GetComponent(typeof(EMSSManager));
+        emssScript.setEmssPaths(initPath, planPath);
+        emssScript.initParser();
+        emssScript.planParser(); // TODO
+        emssScript.buildMap();
+        emssScript.MapInitialized = true;
     }
 
     //Menu options buttons canvas appear
     public void menuPressed()
     {
         menuOptions.gameObject.SetActive(true);
+        if (domain == 0)
+        {
+            if (sokobanScript != null)
+            {
+                sokobanScript.stepByStepMode();
+            }
+        }
     }
 
     /**
@@ -171,6 +191,7 @@ public void runSimulationByDomain()
      *  0 - run the simulation again with the same plan and init files
      *  1 - choosing another plan and init file in the same domain
      *  2 - choosing another domain 
+     *  3 - back to simulation
      */
     public void menuOptionChosed(int i)
     {
@@ -189,8 +210,45 @@ public void runSimulationByDomain()
         else
         {
             menuOptions.gameObject.SetActive(false);
+            if (domain == 0)
+            {
+                if (sokobanScript != null)
+                {
+                    sokobanScript.playSimMode();
+                }
+            }
         }
         menuOptions.gameObject.SetActive(false);
+    }
+
+    /*
+     When play_sim_btn is pressed the simulation tranfer its state to continuus running
+     */
+    public void playSimMode()
+    {
+        if (domain == 0)
+        {
+            sokobanScript.playSimMode();
+        }
+        else
+        {
+            
+        }
+    }
+
+    /*
+     When stp_by_stp is pressed the simulation transfer its state to step mode by demand
+     */
+    public void stepByStepMode()
+    {
+        if (domain == 0)
+        {
+            sokobanScript.stepByStepMode();
+        }
+        else
+        {
+
+        }
     }
 
     // Deleting objects from the current domain and restart the states for the simulation again
@@ -204,7 +262,13 @@ public void runSimulationByDomain()
             }
             if (withGameManagerObjects)
             {
-                sokobanManager.gameObject.SetActive(false);
+                // init fields
+                sokobanScript.initAgentsActions();
+                sokobanScript.initActionCounter();
+                sokobanScript.playSimMode();
+
+                // Unity objects activeness
+                domainManager.gameObject.SetActive(false);
                 menu.gameObject.SetActive(false);
             }
         }
@@ -221,6 +285,14 @@ public void runSimulationByDomain()
     private void menuRunSimulationAgain()
     {
         DeactivateDomain(false);
+        if (domain == 0)
+        {
+            if (sokobanScript != null)
+            {
+                sokobanScript.initActionCounter();
+                sokobanScript.playSimMode();
+            }
+        }
         runSimulationByDomain();
     }
 
@@ -241,7 +313,23 @@ public void runSimulationByDomain()
     private void menuLoadNewDomain()
     {
         DeactivateDomain(true);
-        domainScreen.gameObject.SetActive(true);
+        SceneManager.LoadScene("SceneSimManager");
+        
     }
+
+    public void speedUp()    {        if (domain == 0)
+        {
+            if (sokobanScript != null)
+            {
+                this.sokobanScript.speedUp();
+            }
+        }    }    public void speedDown()    {        if (domain == 0)
+        {
+            if (sokobanScript != null)
+            {
+                this.sokobanScript.speedDown();
+            }
+        }    }
+
 
 }
