@@ -4,6 +4,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using SFB;
+
+
 
 public class SimulationManager : MonoBehaviour
 {
@@ -13,7 +16,7 @@ public class SimulationManager : MonoBehaviour
     public Canvas menu;
     public Canvas menuOptions;
     private Canvas messageDialog;
-
+    // public SmartFileExplorer sfe = new SmartFileExplorer();
 
     public GameObject domainManager;
     private SokobanManager sokobanScript;
@@ -40,7 +43,6 @@ public class SimulationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("here");
         loadScreen.gameObject.SetActive(false);
         endingScreen.gameObject.SetActive(false);
         menu.gameObject.SetActive(false);
@@ -87,15 +89,16 @@ public class SimulationManager : MonoBehaviour
         switch (whichPath)
         {
             case "init":
-                initPath = EditorUtility.OpenFolderPanel("Initial file", "", "");
+                string[] vsFolder = StandaloneFileBrowser.OpenFolderPanel("Open File", "", false);
+                initPath = vsFolder[0];
+                // initPath = EditorUtility.OpenFolderPanel("Initial file", "", "");
                 init_ph.text = initPath;
                 break;
-            // case "pre":
-            //     preconditionEffectsPath = EditorUtility.OpenFilePanel("Precondition & Effects file", "", "");
-            //     preconditions_effects_ph.text = preconditionEffectsPath;
-            //     break;
+
             case "plan":
-                planPath = EditorUtility.OpenFilePanel("Plan file", "", "");
+                string[] vsFile = StandaloneFileBrowser.OpenFilePanel("Open File", "", "", false);
+                planPath = vsFile[0];
+                // planPath = EditorUtility.OpenFilePanel("Plan file", "", "");
                 plan_ph.text = planPath;
                 break;
             default:
@@ -106,9 +109,9 @@ public class SimulationManager : MonoBehaviour
 public void runSimulationByDomain()
     {
         //TEST ONLY ERASE AFTER THAT
-        //initPath = "C:\\Users\\USER\\Desktop\\New folder\\Examples\\p04";
-        //planPath = "C:\\Users\\USER\\Desktop\\New folder\\Examples\\p04\\problem-slow0-0.pddl";
-        domain = 1;
+        // initPath = "C:\\Users\\erant\\Desktop\\p09";
+        // planPath = "C:\\Users\\erant\\Desktop\\p09converted.pddl";
+        //domain = 1;
         if (validateInputeFields())
         {
             menu.gameObject.SetActive(true);
@@ -168,9 +171,8 @@ public void runSimulationByDomain()
         emssScript = (EMSSManager)domainManager.GetComponent(typeof(EMSSManager));
         emssScript.setEmssPaths(initPath, planPath);
         emssScript.initParser();
-        emssScript.planParser(); // TODO
+        emssScript.planParser(); 
         emssScript.buildMap();
-        emssScript.MapInitialized = true;
     }
 
     //Menu options buttons canvas appear
@@ -182,6 +184,13 @@ public void runSimulationByDomain()
             if (sokobanScript != null)
             {
                 sokobanScript.stepByStepMode();
+            }
+        }
+        else if (domain == 1)
+        {
+            if (emssScript != null)
+            {
+                emssScript.stepByStepMode();
             }
         }
     }
@@ -232,7 +241,7 @@ public void runSimulationByDomain()
         }
         else
         {
-            
+            emssScript.playSimMode();
         }
     }
 
@@ -247,7 +256,22 @@ public void runSimulationByDomain()
         }
         else
         {
+            emssScript.stepByStepMode();
+        }
+    }
 
+    /*
+     When step backward is pressed the simulation transfer its state to backward step mode by demand
+     */
+    public void stepBackMode()
+    {
+        if (domain == 0)
+        {
+            sokobanScript.stepBackMode();
+        }
+        else
+        {
+            emssScript.stepBackMode();
         }
     }
 
@@ -272,9 +296,22 @@ public void runSimulationByDomain()
                 menu.gameObject.SetActive(false);
             }
         }
-        else
+        else if (domain == 1)
         {
-            //TODO-EMSS
+            if (emssScript != null)
+            {
+                emssScript.DeleteMap();
+            }
+            if (withGameManagerObjects)
+            {
+                // init fields
+                emssScript.InitActionCounter();
+                emssScript.playSimMode();
+
+                // Unity objects activeness
+                domainManager.gameObject.SetActive(false);
+                menu.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -291,6 +328,14 @@ public void runSimulationByDomain()
             {
                 sokobanScript.initActionCounter();
                 sokobanScript.playSimMode();
+            }
+        }
+        else if (domain == 1)
+        {
+            if (emssScript != null)
+            {
+                emssScript.RunSamePlanAgain();
+                emssScript.playSimMode();
             }
         }
         runSimulationByDomain();
@@ -317,19 +362,41 @@ public void runSimulationByDomain()
         
     }
 
-    public void speedUp()    {        if (domain == 0)
+    public void speedUp()
+    {
+        if (domain == 0)
         {
             if (sokobanScript != null)
             {
                 this.sokobanScript.speedUp();
             }
-        }    }    public void speedDown()    {        if (domain == 0)
+        }
+        else
+        {
+            if (emssScript != null)
+            {
+                emssScript.speedUp();
+            }
+        }
+    }
+
+    public void speedDown()
+    {
+        if (domain == 0)
         {
             if (sokobanScript != null)
             {
                 this.sokobanScript.speedDown();
             }
-        }    }
+        }
+        else
+        {
+            if (emssScript != null)
+            {
+                emssScript.speedDown();
+            }
+        }
+    }
 
 
 }

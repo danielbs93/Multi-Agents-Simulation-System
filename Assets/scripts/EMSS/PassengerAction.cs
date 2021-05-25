@@ -8,7 +8,7 @@ namespace testElevator
 {
     class PassengerAction : Action {
 
-        private Boolean actionType; // 1-Board, 0- Leave
+        private Boolean isBoard; // 1-Board, 0- Leave
         private string elevatorName;
         private int floorNumber;
         private int finalCapacity;
@@ -16,15 +16,25 @@ namespace testElevator
         public PassengerAction(string executorName, bool actionType, string elevatorName,
             int floorNumber, int finalCapacity) : base(executorName) {
 
-            this.actionType = actionType;
+            this.isBoard = actionType;
             this.elevatorName = elevatorName;
             this.floorNumber = floorNumber;
             this.finalCapacity = finalCapacity;
         }
 
-        public Boolean ActionType {
-            set { actionType = value; }
-            get { return this.actionType; }
+        //Copy constructor
+        public PassengerAction(PassengerAction pa) : base(pa.ExecutorName)
+        {
+
+            this.isBoard = pa.isBoard;
+            this.elevatorName = pa.ElevatorName;
+            this.floorNumber = pa.FloorNumber;
+            this.finalCapacity = pa.FinalCapacity;
+        }
+
+        public Boolean IsBoard {
+            set { isBoard = value; }
+            get { return this.isBoard; }
         }
 
         public string ElevatorName{

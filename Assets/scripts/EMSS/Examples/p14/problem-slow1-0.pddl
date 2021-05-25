@@ -197,6 +197,7 @@
 	(passenger-at p10 n4)
 	(passenger-at p11 n11)
 	(passenger-at p12 n13)
+	(passenger-at p13 n7)
 	(= (travel-slow n0 n1) 6) 
 	(= (travel-slow n0 n2) 7) 
 	(= (travel-slow n0 n3) 8) 

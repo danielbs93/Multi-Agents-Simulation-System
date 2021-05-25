@@ -25,6 +25,26 @@ TagManager:
   - ReachableFloorsText
   - RightFloorNumber
   - LeftFloorNumber
+  - MainRightCamera
+  - RightSpaceCanvas
+  - View1UpperCanvas
+  - View1LeftCanvas
+  - View1MiddleCanvas
+  - View1RightCanvas
+  - View1UpperCamera
+  - View1LeftCamera
+  - View1MiddleCamera
+  - View1RightCamera
+  - View2LeftCanvas
+  - View2RightCanvas
+  - View2LeftCamera
+  - View2RightCamera
+  - View3ZoomCanvas
+  - View3WorldCanvas
+  - View3ZoomCamera
+  - View3WorldCamera
+  - View3NullCanvas
+  - View3NullCamera
   layers:
   - Default
   - TransparentFX

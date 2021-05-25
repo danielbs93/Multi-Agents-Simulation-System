@@ -207,6 +207,7 @@
 	(passenger-at p10 n11)
 	(passenger-at p11 n11)
 	(passenger-at p12 n15)
+	(passenger-at p13 n9)
 	(passenger-at p14 n2)
 	(passenger-at p15 n8)
 	(passenger-at p16 n11)

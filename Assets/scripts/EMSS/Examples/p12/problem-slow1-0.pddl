@@ -155,6 +155,8 @@
 	(passenger-at p6 n3)
 	(passenger-at p7 n13)
 	(passenger-at p8 n14)
+	(passenger-at p9 n5)
+	(passenger-at p3 n6)
 	(= (travel-slow n0 n1) 6) 
 	(= (travel-slow n0 n2) 7) 
 	(= (travel-slow n0 n3) 8) 

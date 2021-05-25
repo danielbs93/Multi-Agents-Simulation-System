@@ -12,7 +12,7 @@ namespace testElevator {
 
         public ParsePlanElevator(string path) {
             string[] lines = File.ReadAllLines(path);
-            this.actions = new List<Action>();
+            this.Actions = new List<Action>();
 
             int linesCounter = 0;
 
@@ -28,15 +28,19 @@ namespace testElevator {
 
                         string endFloor = splittedLine[5].Substring(1, splittedLine[5].Length - 2);
                         string startFloor = splittedLine[4].Substring(1);
-                        int direction = Int32.Parse(endFloor) - Int32.Parse(startFloor);
-                        MoveAction moveAction = new MoveAction(executorName, direction);
-                        actions.Insert(linesCounter, moveAction);
+
+                        int targetFloor = Int32.Parse(endFloor);
+                        int departureFloor = Int32.Parse(startFloor);
+
+                        int direction = targetFloor - departureFloor;
+                        MoveAction moveAction = new MoveAction(executorName, direction, departureFloor, targetFloor);
+                        Actions.Insert(linesCounter, moveAction);
                         linesCounter++;
                     }
 
                     else { // Passenger action
                         Boolean isBoard = false;
-                        if (splittedLine[2].Contains("(board-")) 
+                        if (splittedLine[2].Contains("(board")) 
                             isBoard = true;
 
                         string elevatorName;
@@ -51,7 +55,7 @@ namespace testElevator {
 
                         PassengerAction passengerAction = new PassengerAction(passengerName, isBoard,
                             elevatorName, floorNumber, finalCapacity);
-                        actions.Insert(linesCounter, passengerAction);
+                        Actions.Insert(linesCounter, passengerAction);
 
                         linesCounter++;
                         
@@ -59,5 +63,7 @@ namespace testElevator {
                 }
             }
         }
+
+        internal List<Action> Actions { get => actions; set => actions = value; }
     }
 }

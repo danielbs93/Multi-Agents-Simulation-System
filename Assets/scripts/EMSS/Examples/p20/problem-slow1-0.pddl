@@ -208,6 +208,7 @@
 	(passenger-at p9 n12)
 	(passenger-at p10 n12)
 	(passenger-at p11 n4)
+	(passenger-at p12 n6)
 	(passenger-at p13 n12)
 	(passenger-at p14 n2)
 	(passenger-at p15 n15)

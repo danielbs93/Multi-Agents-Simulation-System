@@ -50,9 +50,6 @@ namespace testElevator
                 }
             }
 
-            Console.WriteLine("hayush");
-
-
         }
 
         private void getInformationalData(List<string> list, Boolean first) {
@@ -60,25 +57,54 @@ namespace testElevator
             int counter = 2;
             Boolean hasPrivateFloor = false;
 
+            int maxFloor = 0;
             if (first) {
+                foreach (string line in list)
+                {
+                    if (line.Contains("count"))
+                    {
+                        string[] row = line.Split('-');
+                        string floorNumber = row[0].Trim().Substring(1);
+                        int number = Int32.Parse(floorNumber);
+                        if (number > maxFloor)
+                            maxFloor = number;
+                    }
+                }
+                while (list[counter].Contains("count"))
+                {
+                    
+                    string[] line = list[counter].Split('-');
+                    string floorNumber = line[0].Trim().Substring(1);
+                    int number = Int32.Parse(floorNumber);
+                    if (number > maxFloor)
+                        maxFloor = number;
+                    counter++;
+                }
+
                 while (list[counter].Contains("passenger")) {
                     NumOfPassengers++;
                     counter++;
                 }
                 while (list[counter].Contains("count"))
                 {
-                    NumOfFloors++;
                     string[] line = list[counter].Split('-');
                     string floorNumber = line[0].Trim().Substring(1);
-                    Floor floor = new Floor(Int32.Parse(floorNumber));
-                    if (!Floors.Contains(floor))
-                        this.Floors.Add(floor);
+                    int number = Int32.Parse(floorNumber);
+                    if (number > maxFloor)
+                        maxFloor = number;
+
                     counter++;
+
                 }
+                for ( int i = 0; i < maxFloor+1; i ++) {
+                    Floor floor = new Floor(i);
+                    floors.Add(floor);
+                }
+                numOfFloors = maxFloor+1;
             }
 
             else
-                counter = counter + NumOfPassengers + NumOfFloors;
+                counter = counter + NumOfPassengers;
            
             Elevator elevator = null;
             while (!list[counter].Contains(")")) {
@@ -92,7 +118,8 @@ namespace testElevator
                         elevator = new Elevator(Type.fast, type[0].Trim());
                     }
                 }
-                if (list[counter].Contains("count")) {
+                if (list[counter].Contains("count") && !(elevator == null))
+                {
                     string[] privateElevatorArray = list[counter].Split('-');
                     string floorNumber = privateElevatorArray[0].Trim().Substring(1);
                     Floor floor = new Floor(Int32.Parse(floorNumber));
@@ -137,7 +164,7 @@ namespace testElevator
                 string floorNumber = line[line.Length - 1].Substring(1, line[line.Length - 1].Length - 2);
                 string passengerNumber = line[line.Length - 2].Substring(1);
                 Floor floor = new Floor(Int32.Parse(floorNumber));
-                Passenger passenger = new Passenger(passengerNumber, floor);
+                Passenger passenger = new Passenger("p"+passengerNumber, floor);
                 if (!Passengers.ContainsKey(passengerNumber))
                     this.Passengers.Add(passengerNumber, passenger);
                 counter++;
@@ -153,12 +180,13 @@ namespace testElevator
             while (list[counter].Contains("(passenger-at")) {
                 string[] splittedArray = list[counter].Split(' ');
                 string passengerNumber = splittedArray[1].Substring(1);
-                int destination = Int32.Parse(splittedArray[2].Substring(1, splittedArray[2].Length - 2));
+                int destination = Int32.Parse(splittedArray[2].Substring(1, splittedArray[2].Length - 2)) + 1;
                 Floor destinationFloor = new Floor(destination);
                 Passengers[passengerNumber].Destination = destinationFloor;
                 counter++;
             }
-           
+
+            elevator.ReachableFloors.AddRange(elevator.PrivateFloors);
             this.Elevators.Add(elevator);
             
         }
@@ -167,7 +195,7 @@ namespace testElevator
             while (list[counter].Contains("(=") && !list[counter].Contains("(total-cost)")) {
                
                 string[] splittedArray = list[counter].Split(' ');
-                string fromTo = splittedArray[2].Substring(1) + splittedArray[3].Substring(1,splittedArray[3].Length-2);
+                string fromTo = splittedArray[2].Substring(1) + "-" +splittedArray[3].Substring(1,splittedArray[3].Length-2);
                 
                 int cost = Int32.Parse(splittedArray[4].Substring(0,splittedArray[4].Length - 1));
                 

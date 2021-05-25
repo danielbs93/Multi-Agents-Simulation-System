@@ -117,6 +117,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3729802700587549571, guid: 6df64ddd9a2eb304481819e2e20a81d9,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4659042629725836739, guid: 6df64ddd9a2eb304481819e2e20a81d9,
         type: 3}
       propertyPath: m_Mesh
@@ -126,6 +131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PTK_Elevator_Frames
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707181220981038862, guid: 6df64ddd9a2eb304481819e2e20a81d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7338402808451615065, guid: 6df64ddd9a2eb304481819e2e20a81d9,
         type: 3}

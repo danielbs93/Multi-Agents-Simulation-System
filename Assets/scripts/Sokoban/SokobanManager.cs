@@ -20,6 +20,7 @@ public class SokobanManager : MonoBehaviour
     public GameObject box;
     public GameObject goal;
     public GameObject floor;
+    public Text actionNumber;
 
 
     public GameObject[] agents;
@@ -49,6 +50,7 @@ public class SokobanManager : MonoBehaviour
     // Step by Step mode or continuus running
     private bool gameHold = false;
     private bool stepFlag = false;
+    private bool backWardStep = false;
 
     // private Animator anim;
     private CharacterController controller;
@@ -69,7 +71,7 @@ public class SokobanManager : MonoBehaviour
     int blockSize = 1;  // size of each block
 
     int actionCounter = 0;
-
+    private int previousAnimatorIndex = -1;
     float rotationTime = 90f;
 
     private UnityEngine.UI.Slider slider;
@@ -83,7 +85,7 @@ public class SokobanManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        actionNumber = GameObject.Find("ActionNumber").GetComponent<Text>();
     }
 
     public void setSokobanPaths(string init, string plan)
@@ -224,27 +226,129 @@ public class SokobanManager : MonoBehaviour
 
         // Since Update function occures every 1 frame we had to control the simulation speed by 'frame' variable
         frames++;
-        if (frames%simulationSpeed == 0){
-
+        if (frames%simulationSpeed == 0)
+        {
             // Iterating over the agents actions
-            if (actionCounter < actions.Count){
-                action = actions[actionCounter];
-            }
-            if(action != null)
+            if (actionCounter < actions.Count && (gameHold == stepFlag || gameHold == backWardStep))
             {
-                if (gameHold == stepFlag)
+                if (actionCounter >= 0) { action = actions[actionCounter]; }
+                
+                if(action != null && gameHold == stepFlag)
                 {
-                    AgentMovements(action);
-                    actionCounter++;
-                    // anim.SetInteger ("AnimationPar", 0);
-                    if (gameHold && stepFlag)
+                    if (gameHold == stepFlag)
                     {
-                        stepFlag = !stepFlag;
+                        AgentMovements(action);
+                        actionCounter++;
+                        if (gameHold && stepFlag)
+                        {
+                            stepFlag = !stepFlag;
+                        }
+                    }
+                }
+                else if (action != null && gameHold == backWardStep)
+                {
+                    if (actionCounter >= 0)
+                    {
+                        actionNumber.text = actionCounter.ToString();
+
+                        // Checking if a box was moved too
+                        Vector3 originalDir = GetTranspositionVector(action);
+                        int index = Convert.ToInt32(action.getId()) - 1;
+                        GameObject boxWasMoved = GetBoxInPosition(agents[index].GetComponent<Transform>().position + originalDir);
+
+                        // Reversing the action
+                        Action reversedAction = ReverseActionProperties(action);
+                        Vector3 reverseDirection = GetTranspositionVector(reversedAction);
+                        ReturnToFormerPositions(reversedAction, reverseDirection, boxWasMoved);// switch to new function of just placing the objects in their former state
+                    }
+
+                    if (gameHold && backWardStep)
+                    {
+                        backWardStep = !backWardStep;
                     }
                 }
             }
+            // Stop animation of last agent
+            else if (actionCounter == actions.Count)
+            {
+                Animator currentAnimator = agents[previousAnimatorIndex].GetComponent<Animator>();
+                currentAnimator.SetInteger("AnimationPar", 0);
+                actionCounter++;
+            }
             frames = 0;
         }
+    }
+
+    /*
+     Returning the game objects positions to the former state
+     */
+    private void ReturnToFormerPositions(Action reversedAction, Vector3 reverseDirection, GameObject boxWasMoved)
+    {
+        int index = Convert.ToInt32(reversedAction.getId()) - 1;
+        agents[index].GetComponent<Transform>().position += reverseDirection;
+        if (boxWasMoved != null)
+        {
+            boxWasMoved.GetComponent<Transform>().position += reverseDirection;
+        }
+    }
+
+    /*
+     Reverse the properties of an action 
+     */
+    private Action ReverseActionProperties(Action action)
+    {
+        string reverseDirection = ReverseDirection(action.getDirection());
+        return new Action(action.getId(), action.getDescription(), reverseDirection);
+    }
+
+    /*
+     Return the opposite direction the agent went to illustrate backward step
+     */
+    private string ReverseDirection(string v)
+    {
+        if (v.Equals("right"))
+        {
+            return "left";
+        }
+        else if (v.Equals("left"))
+        {
+            return "right";
+        }
+        else if (v.Equals("up"))
+        {
+            return "down";
+        }
+        else if (v.Equals("down"))
+        {
+            return "up";
+        }
+        else
+            return null;
+    }
+
+    /*
+     Translate the direction needed to backward from string into vector
+     */
+    private Vector3 GetTranspositionVector(Action action)
+    {
+        string v = action.getDirection();
+        if (v.Equals("right"))
+        {
+            return new Vector3(0, 0, 1);
+        }
+        if (v.Equals("left"))
+        {
+            return new Vector3(0, 0, -1);
+        }
+        if (v.Equals("up"))
+        {
+            return new Vector3(-1, 0, 0);
+        }
+        if (v.Equals("down"))
+        {
+            return new Vector3(1, 0, 0);
+        }
+        return new Vector3(0, 0, 0);
     }
 
     private void DrawMap(SimulationObject[,,] map)
@@ -317,48 +421,56 @@ public class SokobanManager : MonoBehaviour
      */
     private void AgentMovements(Action action)
     {
-    //    foreach (Action action in actions)
-    //    {
-            int index = Convert.ToInt32(action.getId())-1;
-            print(index);
-            string value = action.getDirection();
-            controller = GetComponent <CharacterController>();
-            Animator[] anim = gameObject.GetComponentsInChildren<Animator>();
+        actionNumber.text = actionCounter.ToString();
+        int index = Convert.ToInt32(action.getId())-1;
+        string value = action.getDirection();
+        controller = GetComponent <CharacterController>();
+        Animator[] anim = gameObject.GetComponentsInChildren<Animator>();
+
+        // Starting cuurent agent animation and stopping the former agent animation
+        if (previousAnimatorIndex != index && previousAnimatorIndex != -1)
+        {
+            anim[previousAnimatorIndex].SetInteger("AnimationPar", 0);
             anim[index].SetInteger ("AnimationPar", 1);
+        }
 
-           if (value.Equals("right"))
-           {
-                CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
-                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
-                                                     ,Quaternion.LookRotation(new Vector3(0, 0, 1)), Time.deltaTime*rotationTime);
-                agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
-           }
-           if (value.Equals("down"))
-           {
-               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
-                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
-                                                     ,Quaternion.LookRotation(new Vector3(1, 0, 0)), Time.deltaTime*rotationTime);
-               agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
-           }
-           if (value.Equals("left"))
-           {
-               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
-                agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
-                                                     ,Quaternion.LookRotation(new Vector3(0, 0, -1)), Time.deltaTime*rotationTime);
-               agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
+        // If it is the first action and the first agent that is moving then start its animation
+        if (previousAnimatorIndex == -1)
+        {
+            anim[index].SetInteger("AnimationPar", 1);
+        }
 
-           }
-           if (value.Equals("up"))
-           {
-               CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
+        if (value.Equals("right"))
+        {
+            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, 1));
             agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
-                                                     ,Quaternion.LookRotation(new Vector3(-1, 0, 0)), Time.deltaTime*rotationTime);
-               agents[index].GetComponent<Transform>().position += new Vector3(-1, 0, 0);
-           }
-            
-            // Thread.Sleep(600);
-            //anim[index].SetInteger ("AnimationPar", 0);
-    //    }
+                                                    ,Quaternion.LookRotation(new Vector3(0, 0, 1)), Time.deltaTime*rotationTime);
+            agents[index].GetComponent<Transform>().position += new Vector3(0, 0, 1);
+        }
+        if (value.Equals("down"))
+        {
+            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(1, 0, 0));
+            agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                    ,Quaternion.LookRotation(new Vector3(1, 0, 0)), Time.deltaTime*rotationTime);
+            agents[index].GetComponent<Transform>().position += new Vector3(1, 0, 0);
+        }
+        if (value.Equals("left"))
+        {
+            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(0, 0, -1));
+            agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                    ,Quaternion.LookRotation(new Vector3(0, 0, -1)), Time.deltaTime*rotationTime);
+            agents[index].GetComponent<Transform>().position += new Vector3(0, 0, -1);
+
+        }
+        if (value.Equals("up"))
+        {
+            CheckBoxMovment(agents[index].GetComponent<Transform>().position, new Vector3(-1, 0, 0));
+            agents[index].transform.rotation = Quaternion.Lerp(agents[index].transform.rotation
+                                                    ,Quaternion.LookRotation(new Vector3(-1, 0, 0)), Time.deltaTime*rotationTime);
+            agents[index].GetComponent<Transform>().position += new Vector3(-1, 0, 0);
+        }
+
+        previousAnimatorIndex = index;
     }
 
     /*** This function check if in the agent moves he pushes box
@@ -521,6 +633,19 @@ public class SokobanManager : MonoBehaviour
     }
 
     /*
+     Return the box game object in the given position else null
+     */
+    private GameObject GetBoxInPosition(Vector3 pos)
+    {
+        foreach (GameObject box in boxes)
+        {
+            if (box.GetComponent<Transform>().position == pos)
+                return box;
+        }
+        return null;
+    }
+
+    /*
      * Returns true if there is a box in the given position 
      * */
     private bool boxInPosition(Vector3 pos)
@@ -635,6 +760,7 @@ public class SokobanManager : MonoBehaviour
     {
         gameHold = false;
         stepFlag = false;
+        backWardStep = false;
     }
 
     /*
@@ -644,6 +770,24 @@ public class SokobanManager : MonoBehaviour
     {
         gameHold = true;
         stepFlag = true;
+        backWardStep = false;
+        if (actionCounter == -1) { actionCounter += 1; }
+    }
+
+    /*
+     Simulation transformation to backward step-by-step mode by demand
+     */
+    public void stepBackMode()
+    {
+
+        gameHold = true;
+        stepFlag = false;
+        backWardStep = true;
+
+        if (actionCounter >= 0)
+        {
+            actionCounter -= 1;
+        }
     }
 
     public void initActionCounter()

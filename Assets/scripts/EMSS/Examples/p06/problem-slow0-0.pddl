@@ -66,6 +66,8 @@
 	(reachable-floor slow0-0 n2)
 	(reachable-floor slow0-0 n3)
 	(reachable-floor slow0-0 n4)
+	(passenger-at p0 n5)
+	(passenger-at p1 n5)
 	(passenger-at p2 n2)
 	(passenger-at p3 n4)
 	(passenger-at p4 n7)

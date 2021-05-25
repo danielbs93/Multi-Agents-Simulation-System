@@ -65,6 +65,7 @@
 	(passenger-at p0 n3)
 	(passenger-at p1 n1)
 	(passenger-at p3 n0)
+	(passenger-at p2 n7)
 	(= (travel-slow n0 n1) 6) 
 	(= (travel-slow n0 n2) 7) 
 	(= (travel-slow n0 n3) 8) 
